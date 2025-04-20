@@ -1,0 +1,408 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|d:\\daihoc\\lt win\\doancuoiky\\windowskylineproject\\presentation\\bookingflightchooseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\bookingflightchooseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|d:\\daihoc\\lt win\\doancuoiky\\windowskylineproject\\presentation\\bookingconfirmform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\bookingconfirmform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|d:\\daihoc\\lt win\\doancuoiky\\windowskylineproject\\presentation\\bookinginformationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\bookinginformationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\presentation\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|d:\\daihoc\\lt win\\doancuoiky\\windowskylineproject\\presentation\\passengerloginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\passengerloginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\presentation\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|d:\\daihoc\\lt win\\doancuoiky\\windowskylineproject\\presentation\\seatbookform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\seatbookform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|d:\\daihoc\\lt win\\doancuoiky\\windowskylineproject\\presentation\\ticketcancelform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\ticketcancelform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|d:\\daihoc\\lt win\\doancuoiky\\windowskylineproject\\presentation\\tickethistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\tickethistoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\presentation\\apiexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\apiexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F2C4002-B6E0-4D31-ABCE-8679861985CF}|DataAccess\\DataAccess.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\dataaccess\\checkpassengerlogin_registeraccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F2C4002-B6E0-4D31-ABCE-8679861985CF}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\checkpassengerlogin_registeraccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|d:\\daihoc\\lt win\\doancuoiky\\windowskylineproject\\presentation\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\presentation\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC61BD88-01F6-4530-8066-476D48A975FC}|BusinessLogic\\BusinessLogic.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\businesslogic\\checkpassengerlogin_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC61BD88-01F6-4530-8066-476D48A975FC}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\checkpassengerlogin_register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{085EBA62-B739-4D67-B506-5E72499C9B03}|DataTransferObject\\DataTransferObject.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\datatransferobject\\passenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{085EBA62-B739-4D67-B506-5E72499C9B03}|DataTransferObject\\DataTransferObject.csproj|solutionrelative:datatransferobject\\passenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F2C4002-B6E0-4D31-ABCE-8679861985CF}|DataAccess\\DataAccess.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\dataaccess\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F2C4002-B6E0-4D31-ABCE-8679861985CF}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{085EBA62-B739-4D67-B506-5E72499C9B03}|DataTransferObject\\DataTransferObject.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\datatransferobject\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{085EBA62-B739-4D67-B506-5E72499C9B03}|DataTransferObject\\DataTransferObject.csproj|solutionrelative:datatransferobject\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{085EBA62-B739-4D67-B506-5E72499C9B03}|DataTransferObject\\DataTransferObject.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\datatransferobject\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{085EBA62-B739-4D67-B506-5E72499C9B03}|DataTransferObject\\DataTransferObject.csproj|solutionrelative:datatransferobject\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{085EBA62-B739-4D67-B506-5E72499C9B03}|DataTransferObject\\DataTransferObject.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\datatransferobject\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{085EBA62-B739-4D67-B506-5E72499C9B03}|DataTransferObject\\DataTransferObject.csproj|solutionrelative:datatransferobject\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{085EBA62-B739-4D67-B506-5E72499C9B03}|DataTransferObject\\DataTransferObject.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\datatransferobject\\crewmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{085EBA62-B739-4D67-B506-5E72499C9B03}|DataTransferObject\\DataTransferObject.csproj|solutionrelative:datatransferobject\\crewmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\presentation\\apiexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\apiexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFE89FA4-15F0-427D-AAE3-FDBF4F29474D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 13,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{778b5376-ad77-4751-acdc-f3d18343f8dd}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TicketHistoryForm.cs [Design]",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\TicketHistoryForm.cs",
+              "RelativeDocumentMoniker": "Presentation\\TicketHistoryForm.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\TicketHistoryForm.cs [Design]",
+              "RelativeToolTip": "Presentation\\TicketHistoryForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T13:43:38.28Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TicketCancelForm.cs [Design]",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\TicketCancelForm.cs",
+              "RelativeDocumentMoniker": "Presentation\\TicketCancelForm.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\TicketCancelForm.cs [Design]",
+              "RelativeToolTip": "Presentation\\TicketCancelForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T13:42:46.432Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SeatBookForm.cs [Design]",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\SeatBookForm.cs",
+              "RelativeDocumentMoniker": "Presentation\\SeatBookForm.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\SeatBookForm.cs [Design]",
+              "RelativeToolTip": "Presentation\\SeatBookForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T13:40:49.388Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PassengerLoginForm.cs [Design]",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\PassengerLoginForm.cs",
+              "RelativeDocumentMoniker": "Presentation\\PassengerLoginForm.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\PassengerLoginForm.cs [Design]",
+              "RelativeToolTip": "Presentation\\PassengerLoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T13:39:03.083Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookingInformationForm.cs [Design]",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\BookingInformationForm.cs",
+              "RelativeDocumentMoniker": "Presentation\\BookingInformationForm.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\BookingInformationForm.cs [Design]",
+              "RelativeToolTip": "Presentation\\BookingInformationForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T13:32:10.521Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookingFlightChooseForm.cs [Design]",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\BookingFlightChooseForm.cs",
+              "RelativeDocumentMoniker": "Presentation\\BookingFlightChooseForm.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\BookingFlightChooseForm.cs [Design]",
+              "RelativeToolTip": "Presentation\\BookingFlightChooseForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T13:30:17.961Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookingConfirmForm.cs [Design]",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\BookingConfirmForm.cs",
+              "RelativeDocumentMoniker": "Presentation\\BookingConfirmForm.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\BookingConfirmForm.cs [Design]",
+              "RelativeToolTip": "Presentation\\BookingConfirmForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T13:25:58.502Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CheckPassengerLogin_RegisterAccess.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataAccess\\CheckPassengerLogin_RegisterAccess.cs",
+              "RelativeDocumentMoniker": "DataAccess\\CheckPassengerLogin_RegisterAccess.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataAccess\\CheckPassengerLogin_RegisterAccess.cs",
+              "RelativeToolTip": "DataAccess\\CheckPassengerLogin_RegisterAccess.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAQwC0AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T03:46:39.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CheckPassengerLogin_Register.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\BusinessLogic\\CheckPassengerLogin_Register.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\CheckPassengerLogin_Register.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\BusinessLogic\\CheckPassengerLogin_Register.cs",
+              "RelativeToolTip": "BusinessLogic\\CheckPassengerLogin_Register.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T03:39:19.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "APIExample.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\APIExample.cs",
+              "RelativeDocumentMoniker": "Presentation\\APIExample.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\APIExample.cs",
+              "RelativeToolTip": "Presentation\\APIExample.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T16:02:03.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "APIExample.cs [Design]",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\APIExample.cs",
+              "RelativeDocumentMoniker": "Presentation\\APIExample.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\APIExample.cs [Design]",
+              "RelativeToolTip": "Presentation\\APIExample.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T15:58:58.012Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataTransferObject\\Ticket.cs",
+              "RelativeDocumentMoniker": "DataTransferObject\\Ticket.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataTransferObject\\Ticket.cs",
+              "RelativeToolTip": "DataTransferObject\\Ticket.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAuwKQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T15:37:42.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Passenger.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataTransferObject\\Passenger.cs",
+              "RelativeDocumentMoniker": "DataTransferObject\\Passenger.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataTransferObject\\Passenger.cs",
+              "RelativeToolTip": "DataTransferObject\\Passenger.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T15:32:52.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CrewMember.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataTransferObject\\CrewMember.cs",
+              "RelativeDocumentMoniker": "DataTransferObject\\CrewMember.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataTransferObject\\CrewMember.cs",
+              "RelativeToolTip": "DataTransferObject\\CrewMember.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T15:32:28.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Person.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataTransferObject\\Person.cs",
+              "RelativeDocumentMoniker": "DataTransferObject\\Person.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataTransferObject\\Person.cs",
+              "RelativeToolTip": "DataTransferObject\\Person.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T15:31:58.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Controller.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataTransferObject\\Controller.cs",
+              "RelativeDocumentMoniker": "DataTransferObject\\Controller.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataTransferObject\\Controller.cs",
+              "RelativeToolTip": "DataTransferObject\\Controller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T15:31:05.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Database.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataAccess\\Database.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Database.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\DataAccess\\Database.cs",
+              "RelativeToolTip": "DataAccess\\Database.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAswH8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T15:09:36.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Register.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\Register.cs",
+              "RelativeDocumentMoniker": "Presentation\\Register.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\Register.cs",
+              "RelativeToolTip": "Presentation\\Register.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAuwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T15:00:54.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Register.cs [Design]",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\Register.cs",
+              "RelativeDocumentMoniker": "Presentation\\Register.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\Register.cs [Design]",
+              "RelativeToolTip": "Presentation\\Register.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T04:31:34.055Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Login.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\Login.cs",
+              "RelativeDocumentMoniker": "Presentation\\Login.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\Login.cs",
+              "RelativeToolTip": "Presentation\\Login.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAtwI0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:41:14.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\Login.cs",
+              "RelativeDocumentMoniker": "Presentation\\Login.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\Login.cs [Design]",
+              "RelativeToolTip": "Presentation\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:36:25.428Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\Program.cs",
+              "RelativeDocumentMoniker": "Presentation\\Program.cs",
+              "ToolTip": "D:\\DaiHoc\\LT Win\\DoAnCuoiKy\\WindowSkylineProject\\Presentation\\Program.cs",
+              "RelativeToolTip": "Presentation\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:35:41.421Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

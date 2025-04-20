@@ -1,0 +1,79 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using DataTransferObject;
+using DataAccess;
+
+namespace BusinessLogic
+{
+    public class CheckPassengerLogin_Register
+    {
+        public string CheckLogin(Passenger passenger)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(passenger.UserName))
+                {
+                    return "Tên người dùng không được để trống";
+                }
+                if (string.IsNullOrEmpty(passenger.Password))
+                {
+                    return "Mật khẩu không được để trống";
+                }
+                CheckPassengerLogin_RegisterAccess checkPassengerLoginAccess = new CheckPassengerLogin_RegisterAccess();
+                if (!checkPassengerLoginAccess.IsExist(passenger))
+                {
+                    return "Tên người dùng hoặc mật khẩu không đúng";
+                }
+                return "Đăng nhập thành công";
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi kiểm tra đăng nhập: " + ex.Message, ex);
+            }
+        }
+
+        public string Register(Passenger passenger, string confirmPassword)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(passenger.FullName))
+                {
+                    return "Họ tên không được để trống";
+                }
+                if (string.IsNullOrEmpty(passenger.UserName))
+                {
+                    return "Tên người dùng không được để trống";
+                }
+                if (string.IsNullOrEmpty(passenger.Password))
+                {
+                    return "Mật khẩu không được để trống";
+                }
+                if (string.IsNullOrEmpty(confirmPassword))
+                {
+                    return "Vui lòng nhập xác minh mật khẩu";
+                }
+                if (!passenger.Password.Equals(confirmPassword))
+                {
+                    return "Mật khẩu không khớp";
+                }
+                CheckPassengerLogin_RegisterAccess checkPassengerLoginAccess = new CheckPassengerLogin_RegisterAccess();
+                if (checkPassengerLoginAccess.IsExist(passenger))
+                {
+                    return "Người dùng đã tồn tại";
+                }
+                // Thêm logic để lưu thông tin người dùng mới vào cơ sở dữ liệu
+                CheckPassengerLogin_RegisterAccess checkPassengerRegisterAccess = new CheckPassengerLogin_RegisterAccess();
+                checkPassengerRegisterAccess.Register(passenger);
+                return "Đăng ký thành công";
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi đăng ký: " + ex.Message, ex);
+            }
+        }
+    }
+}

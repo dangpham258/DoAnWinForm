@@ -1,0 +1,6 @@
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\DataTransferObject\bin\Debug\DataTransferObject.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\DataTransferObject\bin\Debug\DataTransferObject.pdb
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.csproj.AssemblyReference.cache
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.csproj.CoreCompileInputs.cache
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.pdb
