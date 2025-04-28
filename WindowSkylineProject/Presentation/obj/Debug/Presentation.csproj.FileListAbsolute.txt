@@ -17,3 +17,24 @@ D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\Presentation\bin\Debug\DataTran
 D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\Presentation\obj\Debug\Presenta.BC777DBE.Up2Date
 D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\Presentation\bin\Debug\DataAccess.dll
 D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\Presentation\bin\Debug\DataAccess.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\Presentation.exe.config
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\Presentation.exe
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\Presentation.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\BusinessLogic.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\DataTransferObject.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\DataAccess.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\BusinessLogic.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\DataTransferObject.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\DataAccess.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.csproj.AssemblyReference.cache
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.loginForm.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.registerForm.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presenta.BC777DBE.Up2Date
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.exe
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\Newtonsoft.Json.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\Newtonsoft.Json.xml
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.BookingFlightChooseForm.resources

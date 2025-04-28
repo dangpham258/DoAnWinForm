@@ -27,7 +27,7 @@ namespace DataTransferObject
             this.status = status;
         }
 
-        // Constructor không có personId; các thuộc tính bổ sung có giá trị mặc định null nếu không truyền vào
+        // Constructor không có personId;
         public CrewMember(string userName, string password, string jobType, int yearsOfExperience, string phoneNumber, string fullName, string cccd, int status) : base(userName, password)
         {
             this.jobType = jobType;

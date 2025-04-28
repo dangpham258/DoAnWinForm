@@ -23,7 +23,7 @@ namespace DataTransferObject
             this.cccd = cccd;
         }
 
-        // Constructor không có personId; các thuộc tính bổ sung có giá trị mặc định null nếu không truyền vào
+        // Constructor không có personId; dùng cho việc đăng ký 
         public Passenger(string userName, string password,
                          string phoneNumber = null, string fullName = null, string cccd = null)
             : base(userName, password)

@@ -19,7 +19,7 @@ namespace DataAccess
         {
             try
             {
-                string query = "SELECT COUNT(*) FROM Person WHERE UserName = @UserName AND Password = @Password";
+                string query = "SELECT COUNT(*) FROM Table_UserDatabase WHERE UserName = @UserName AND Password = @Password";
                 List<SqlParameter> parameters = new List<SqlParameter>
                 {
                     new SqlParameter("@UserName", passenger.UserName),
@@ -40,9 +40,10 @@ namespace DataAccess
         {
             try
             {
-                string query = "INSERT INTO Person (UserName, Password) VALUES (@UserName, @Password)";
+                string query = "INSERT INTO Table_UserDatabase (FullName, UserName, Password) VALUES (@FullName, @UserName, @Password)";
                 List<SqlParameter> parameters = new List<SqlParameter>
                 {
+                    new SqlParameter("@FullName", passenger.FullName),
                     new SqlParameter("@UserName", passenger.UserName),
                     new SqlParameter("@Password", passenger.Password)
                 };

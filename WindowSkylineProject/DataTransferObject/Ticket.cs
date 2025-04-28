@@ -17,25 +17,24 @@ namespace DataTransferObject
 
         private DateTime departureDate;      // Ngày bay đi
         private DateTime arrivalDate;        // Ngày hạ cánh chuyến bay đi
-        private DateTime? returnDepartureDate;   // Ngày bay về (NULL nếu vé một chiều)
-        private DateTime? returnArrivalDate;      // Ngày hạ cánh chuyến bay về (NULL nếu vé một chiều)
+
 
         private string classType;            // Hạng bay (Economy, Business, First Class, ...)
-        private int flightType;              // Loại bay (1 = Roundtrip, 2 = Oneway)
-
         private string seatNumber;           // Mã ghế (ví dụ: G01 đến G10)
-
         private int price;                   // Giá vé (kiểu int)
 
         private string phoneNumber;          // Số điện thoại liên hệ
         private string fullName;             // Họ và tên hành khách
         private string cccd;                 // Căn cước công dân (CCCD)
 
+        private int status;                  // Trạng thái vé: 0 - Chưa dùng, 1 - Đã dùng, 2 - Đã hủy
+
+
         // Constructor đầy đủ với tất cả các thông tin (bao gồm ticketId)
         public Ticket(int ticketId, string flightNumber, string airline, string departCode, string arriveCode,
-                      DateTime departureDate, DateTime arrivalDate, DateTime? returnDepartureDate, DateTime? returnArrivalDate,
-                      string classType, int flightType, string seatNumber, int price,
-                      string phoneNumber, string fullName, string cccd)
+                      DateTime departureDate, DateTime arrivalDate,
+                      string classType, string seatNumber, int price,
+                      string phoneNumber, string fullName, string cccd, int status = 0)
         {
             this.ticketId = ticketId;
             this.flightNumber = flightNumber;
@@ -44,24 +43,22 @@ namespace DataTransferObject
             this.arriveCode = arriveCode;
             this.departureDate = departureDate;
             this.arrivalDate = arrivalDate;
-            this.returnDepartureDate = returnDepartureDate;
-            this.returnArrivalDate = returnArrivalDate;
             this.classType = classType;
-            this.flightType = flightType;
             this.seatNumber = seatNumber;
             this.price = price;
             this.phoneNumber = phoneNumber;
             this.fullName = fullName;
             this.cccd = cccd;
+            this.status = status;
         }
 
         // Constructor không có ticketId (dùng khi insert mới, vì ticketId sẽ được SQL Server tự tăng)
         public Ticket(string flightNumber, string airline, string departCode, string arriveCode,
-                      DateTime departureDate, DateTime arrivalDate, DateTime? returnDepartureDate, DateTime? returnArrivalDate,
-                      string classType, int flightType, string seatNumber, int price,
-                      string phoneNumber, string fullName, string cccd)
-            : this(0, flightNumber, airline, departCode, arriveCode, departureDate, arrivalDate, returnDepartureDate, returnArrivalDate,
-                   classType, flightType, seatNumber, price, phoneNumber, fullName, cccd)
+                      DateTime departureDate, DateTime arrivalDate,
+                      string classType, string seatNumber, int price,
+                      string phoneNumber, string fullName, string cccd, int status = 0)
+            : this(0, flightNumber, airline, departCode, arriveCode, departureDate, arrivalDate,
+                   classType, seatNumber, price, phoneNumber, fullName, cccd, status)
         {
         }
 
@@ -109,28 +106,10 @@ namespace DataTransferObject
             set { arrivalDate = value; }      // Gán ngày hạ cánh chuyến bay đi
         }
 
-        public DateTime? ReturnDepartureDate
-        {
-            get { return returnDepartureDate; }  // Lấy ngày bay về (nếu có)
-            set { returnDepartureDate = value; } // Gán ngày bay về
-        }
-
-        public DateTime? ReturnArrivalDate
-        {
-            get { return returnArrivalDate; }    // Lấy ngày hạ cánh chuyến bay về (nếu có)
-            set { returnArrivalDate = value; }   // Gán ngày hạ cánh chuyến bay về
-        }
-
         public string ClassType
         {
             get { return classType; }         // Lấy hạng bay (Economy, Business, ...)
             set { classType = value; }        // Gán hạng bay
-        }
-
-        public int FlightType
-        {
-            get { return flightType; }        // Lấy loại bay (1 = Roundtrip, 2 = Oneway)
-            set { flightType = value; }       // Gán loại bay
         }
 
         public string SeatNumber
@@ -161,6 +140,12 @@ namespace DataTransferObject
         {
             get { return cccd; }              // Lấy căn cước công dân (CCCD)
             set { cccd = value; }             // Gán căn cước công dân (CCCD)
+        }
+
+        public int Status
+        {
+            get { return status; }            // Lấy trạng thái vé
+            set { status = value; }           // Gán trạng thái vé
         }
     }
 }

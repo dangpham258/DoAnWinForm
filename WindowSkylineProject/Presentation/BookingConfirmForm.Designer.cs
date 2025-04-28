@@ -15,7 +15,6 @@
         private System.Windows.Forms.Label lblGia;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnXacNhan;
-        private System.Windows.Forms.Button btnQuayLai;
 
         protected override void Dispose(bool disposing)
         {
@@ -40,7 +39,6 @@
             this.lblGia = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnXacNhan = new System.Windows.Forms.Button();
-            this.btnQuayLai = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -187,7 +185,6 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnXacNhan);
-            this.flowLayoutPanel1.Controls.Add(this.btnQuayLai);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 635);
@@ -199,22 +196,13 @@
             // btnXacNhan
             // 
             this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.btnXacNhan.Location = new System.Drawing.Point(593, 4);
+            this.btnXacNhan.Location = new System.Drawing.Point(-3, 4);
             this.btnXacNhan.Margin = new System.Windows.Forms.Padding(4);
             this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(579, 113);
+            this.btnXacNhan.Size = new System.Drawing.Size(1175, 113);
             this.btnXacNhan.TabIndex = 0;
             this.btnXacNhan.Text = "Xác nhận";
-            // 
-            // btnQuayLai
-            // 
-            this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.btnQuayLai.Location = new System.Drawing.Point(4, 4);
-            this.btnQuayLai.Margin = new System.Windows.Forms.Padding(4);
-            this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(581, 113);
-            this.btnQuayLai.TabIndex = 1;
-            this.btnQuayLai.Text = "Thay đổi thông tin";
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // BookingConfirmForm
             // 
@@ -229,6 +217,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
     }
 }

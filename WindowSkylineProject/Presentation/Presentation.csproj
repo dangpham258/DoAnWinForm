@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APIExample.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="APIExample.Designer.cs">
-      <DependentUpon>APIExample.cs</DependentUpon>
-    </Compile>
     <Compile Include="BookingConfirmForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +63,30 @@
     </Compile>
     <Compile Include="BookingInformationForm.Designer.cs">
       <DependentUpon>BookingInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerFlightChooseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerFlightChooseForm.Designer.cs">
+      <DependentUpon>ControllerFlightChooseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerLoginForm.Designer.cs">
+      <DependentUpon>ControllerLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrewCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrewCheckForm.Designer.cs">
+      <DependentUpon>CrewCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrewLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrewLoginForm.Designer.cs">
+      <DependentUpon>CrewLoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PassengerLoginForm.cs">
       <SubType>Form</SubType>
@@ -108,8 +126,23 @@
     <Compile Include="TicketHistoryForm.Designer.cs">
       <DependentUpon>TicketHistoryForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="APIExample.resx">
-      <DependentUpon>APIExample.cs</DependentUpon>
+    <EmbeddedResource Include="BookingConfirmForm.resx">
+      <DependentUpon>BookingConfirmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingFlightChooseForm.resx">
+      <DependentUpon>BookingFlightChooseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerFlightChooseForm.resx">
+      <DependentUpon>ControllerFlightChooseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerLoginForm.resx">
+      <DependentUpon>ControllerLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrewCheckForm.resx">
+      <DependentUpon>CrewCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrewLoginForm.resx">
+      <DependentUpon>CrewLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -125,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatBookForm.resx">
+      <DependentUpon>SeatBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

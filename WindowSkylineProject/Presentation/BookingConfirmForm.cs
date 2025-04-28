@@ -16,5 +16,10 @@ namespace Presentation
         {
             InitializeComponent();
         }
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -7,3 +7,14 @@ D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\DataAccess\bin\Debug\DataTransf
 D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\DataAccess\obj\Debug\DataAccess.csproj.Up2Date
 D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\DataAccess\obj\Debug\DataAccess.dll
 D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\DataAccess\obj\Debug\DataAccess.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataAccess\bin\Debug\DataAccess.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataAccess\bin\Debug\DataAccess.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataAccess\bin\Debug\DataTransferObject.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataAccess\bin\Debug\DataTransferObject.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataAccess\obj\Debug\DataAccess.csproj.Up2Date
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataAccess\obj\Debug\DataAccess.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataAccess\obj\Debug\DataAccess.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataAccess\bin\Debug\Newtonsoft.Json.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataAccess\bin\Debug\Newtonsoft.Json.xml
