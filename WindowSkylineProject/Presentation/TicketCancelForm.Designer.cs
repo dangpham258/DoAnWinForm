@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DVGTicket = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DVGTicket)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // DVGTicket
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(51, 107);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1056, 242);
-            this.dataGridView1.TabIndex = 0;
+            this.DVGTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DVGTicket.Location = new System.Drawing.Point(51, 107);
+            this.DVGTicket.Name = "DVGTicket";
+            this.DVGTicket.RowHeadersWidth = 51;
+            this.DVGTicket.RowTemplate.Height = 24;
+            this.DVGTicket.Size = new System.Drawing.Size(1056, 242);
+            this.DVGTicket.TabIndex = 0;
             // 
             // label1
             // 
@@ -69,11 +69,11 @@
             this.ClientSize = new System.Drawing.Size(1182, 753);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DVGTicket);
             this.Name = "TicketCancelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicketCancelForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DVGTicket)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,7 +81,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DVGTicket;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHuy;
     }

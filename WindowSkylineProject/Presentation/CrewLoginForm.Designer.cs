@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnXepLich = new System.Windows.Forms.Button();
+            this.btnXem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonBusy = new System.Windows.Forms.RadioButton();
+            this.radioButtonFree = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtJob = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnXepLich
+            // btnXem
             // 
-            this.btnXepLich.Location = new System.Drawing.Point(66, 212);
-            this.btnXepLich.Name = "btnXepLich";
-            this.btnXepLich.Size = new System.Drawing.Size(168, 63);
-            this.btnXepLich.TabIndex = 2;
-            this.btnXepLich.Text = "Xem chuyến bay bay";
-            this.btnXepLich.UseVisualStyleBackColor = true;
+            this.btnXem.Location = new System.Drawing.Point(66, 212);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(168, 63);
+            this.btnXem.TabIndex = 2;
+            this.btnXem.Text = "Xem chuyến bay bay";
+            this.btnXem.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButtonBusy);
+            this.groupBox1.Controls.Add(this.radioButtonFree);
             this.groupBox1.Location = new System.Drawing.Point(804, 361);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
@@ -60,27 +60,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trạng thái hoạt động";
             // 
-            // radioButton1
+            // radioButtonBusy
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(16, 22);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(60, 20);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Rảnh";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonBusy.AutoSize = true;
+            this.radioButtonBusy.Location = new System.Drawing.Point(16, 65);
+            this.radioButtonBusy.Name = "radioButtonBusy";
+            this.radioButtonBusy.Size = new System.Drawing.Size(52, 20);
+            this.radioButtonBusy.TabIndex = 1;
+            this.radioButtonBusy.TabStop = true;
+            this.radioButtonBusy.Text = "Bận";
+            this.radioButtonBusy.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonFree
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(16, 65);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(52, 20);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Bận";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonFree.AutoSize = true;
+            this.radioButtonFree.Location = new System.Drawing.Point(16, 22);
+            this.radioButtonFree.Name = "radioButtonFree";
+            this.radioButtonFree.Size = new System.Drawing.Size(60, 20);
+            this.radioButtonFree.TabIndex = 0;
+            this.radioButtonFree.TabStop = true;
+            this.radioButtonFree.Text = "Rảnh";
+            this.radioButtonFree.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -91,19 +91,19 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Xin chào nhân viên phi hành đoàn";
             // 
-            // textBox1
+            // txtJob
             // 
-            this.textBox1.Location = new System.Drawing.Point(161, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 15;
+            this.txtJob.Location = new System.Drawing.Point(161, 72);
+            this.txtJob.Name = "txtJob";
+            this.txtJob.Size = new System.Drawing.Size(100, 22);
+            this.txtJob.TabIndex = 15;
             // 
-            // textBox2
+            // txtName
             // 
-            this.textBox2.Location = new System.Drawing.Point(161, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 16;
+            this.txtName.Location = new System.Drawing.Point(161, 127);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(100, 22);
+            this.txtName.TabIndex = 16;
             // 
             // label1
             // 
@@ -130,11 +130,11 @@
             this.ClientSize = new System.Drawing.Size(1182, 753);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtJob);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnXepLich);
+            this.Controls.Add(this.btnXem);
             this.Name = "CrewLoginForm";
             this.Text = "CrewLoginForm";
             this.groupBox1.ResumeLayout(false);
@@ -146,13 +146,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnXepLich;
+        private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButtonBusy;
+        private System.Windows.Forms.RadioButton radioButtonFree;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtJob;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
     }

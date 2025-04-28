@@ -33,14 +33,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.txtHang = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.DVGHistoryTicket = new System.Windows.Forms.DataGridView();
+            this.cbbDiemdi = new System.Windows.Forms.ComboBox();
+            this.cbbDiemden = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.DVGHistoryTicket)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -75,9 +75,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(465, 53);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 16);
+            this.label4.Size = new System.Drawing.Size(102, 16);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Tên";
+            this.label4.Text = "Tên hành khách";
             // 
             // label5
             // 
@@ -88,40 +88,26 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Hãng";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(168, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 22);
-            this.textBox1.TabIndex = 5;
+            this.txtName.Location = new System.Drawing.Point(573, 47);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(181, 22);
+            this.txtName.TabIndex = 7;
             // 
-            // textBox2
+            // dateTimePicker
             // 
-            this.textBox2.Location = new System.Drawing.Point(168, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 22);
-            this.textBox2.TabIndex = 6;
+            this.dateTimePicker.Location = new System.Drawing.Point(168, 167);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker.TabIndex = 8;
             // 
-            // textBox3
+            // txtHang
             // 
-            this.textBox3.Location = new System.Drawing.Point(549, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(181, 22);
-            this.textBox3.TabIndex = 7;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(168, 167);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(549, 103);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(181, 22);
-            this.textBox4.TabIndex = 9;
+            this.txtHang.Location = new System.Drawing.Point(573, 106);
+            this.txtHang.Name = "txtHang";
+            this.txtHang.Size = new System.Drawing.Size(181, 22);
+            this.txtHang.TabIndex = 9;
             // 
             // btnSearch
             // 
@@ -132,28 +118,44 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DVGHistoryTicket
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(69, 268);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 150);
-            this.dataGridView1.TabIndex = 11;
+            this.DVGHistoryTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DVGHistoryTicket.Location = new System.Drawing.Point(69, 268);
+            this.DVGHistoryTicket.Name = "DVGHistoryTicket";
+            this.DVGHistoryTicket.RowHeadersWidth = 51;
+            this.DVGHistoryTicket.RowTemplate.Height = 24;
+            this.DVGHistoryTicket.Size = new System.Drawing.Size(661, 150);
+            this.DVGHistoryTicket.TabIndex = 11;
+            // 
+            // cbbDiemdi
+            // 
+            this.cbbDiemdi.FormattingEnabled = true;
+            this.cbbDiemdi.Location = new System.Drawing.Point(168, 50);
+            this.cbbDiemdi.Name = "cbbDiemdi";
+            this.cbbDiemdi.Size = new System.Drawing.Size(216, 24);
+            this.cbbDiemdi.TabIndex = 12;
+            // 
+            // cbbDiemden
+            // 
+            this.cbbDiemden.FormattingEnabled = true;
+            this.cbbDiemden.Location = new System.Drawing.Point(168, 108);
+            this.cbbDiemden.Name = "cbbDiemden";
+            this.cbbDiemden.Size = new System.Drawing.Size(216, 24);
+            this.cbbDiemden.TabIndex = 13;
             // 
             // TicketHistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 753);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cbbDiemdi);
+            this.Controls.Add(this.cbbDiemden);
+            this.Controls.Add(this.DVGHistoryTicket);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtHang);
+            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -162,7 +164,7 @@
             this.Name = "TicketHistoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicketHistoryForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DVGHistoryTicket)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,12 +177,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.TextBox txtHang;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DVGHistoryTicket;
+        private System.Windows.Forms.ComboBox cbbDiemdi;
+        private System.Windows.Forms.ComboBox cbbDiemden;
     }
 }
