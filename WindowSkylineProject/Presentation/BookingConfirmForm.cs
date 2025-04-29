@@ -19,7 +19,16 @@ namespace Presentation
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
+            PassengerLoginForm next = new PassengerLoginForm();
+            next.Show();
+            this.Hide();
+        }
 
+        private void btnQuayLai_Click(object sender, EventArgs e)
+        {
+            SeatBookForm next = new SeatBookForm();
+            next.Show();
+            this.Hide();
         }
     }
 }

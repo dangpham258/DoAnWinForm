@@ -30,8 +30,7 @@ namespace Presentation
         {
             try
             {
-                Passenger passenger = new Passenger(usernameTxt.Text, passwordTxt.Text);
-                passenger.FullName = fullnameTxt.Text;
+                Passenger passenger = new Passenger(usernameTxt.Text, passwordTxt.Text, fullnameTxt.Text);
                 string confirmPassword = confirmPasswordTxt.Text;
 
                 CheckPassengerLogin_Register checkPassengerRegister = new CheckPassengerLogin_Register();
@@ -44,6 +43,9 @@ namespace Presentation
                         this.Close();
                         loginForm login = new loginForm();
                         login.Show();
+                        break;
+                    case "Tên user không được chứa khoảng trắng":
+                        MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         break;
                     case "Người dùng đã tồn tại":
                         MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -61,6 +63,9 @@ namespace Presentation
                         MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         break;
                     case "Vui lòng nhập xác minh mật khẩu":
+                        MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        break;
+                    case "Mật khẩu phải có ít nhất 6 ký tự":
                         MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         break;
                 }
@@ -149,6 +154,22 @@ namespace Presentation
                 confirmPasswordTxt.Text = "Ex: password";
                 confirmPasswordTxt.PasswordChar = '\0'; // Hiện lại mật khẩu
             }
+        }
+
+        private void registerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có muốn thoát ứng dụng?", "Thoát ứng dụng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            loginForm next = new loginForm();
+            next.Show();
+            this.Hide();
         }
     }
 }

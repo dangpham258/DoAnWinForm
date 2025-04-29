@@ -31,7 +31,9 @@
             this.DVGTicket = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DVGTicket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // DVGTicket
@@ -62,18 +64,32 @@
             this.btnHuy.Text = "Gửi yêu cầu hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             // 
+            // btnBack
+            // 
+            this.btnBack.Image = global::Presentation.Properties.Resources.back;
+            this.btnBack.Location = new System.Drawing.Point(1141, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(29, 37);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 71;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // TicketCancelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DVGTicket);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TicketCancelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicketCancelForm";
             ((System.ComponentModel.ISupportInitialize)(this.DVGTicket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,5 +100,6 @@
         private System.Windows.Forms.DataGridView DVGTicket;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.PictureBox btnBack;
     }
 }

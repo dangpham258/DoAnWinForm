@@ -23,9 +23,9 @@ namespace DataTransferObject
             this.cccd = cccd;
         }
 
-        // Constructor không có personId; dùng cho việc đăng ký 
-        public Passenger(string userName, string password,
-                         string phoneNumber = null, string fullName = null, string cccd = null)
+        // Constructor không có personId
+        public Passenger(string userName, string password, string fullName = null,
+                         string phoneNumber = null, string cccd = null)
             : base(userName, password)
         {
             this.phoneNumber = phoneNumber;

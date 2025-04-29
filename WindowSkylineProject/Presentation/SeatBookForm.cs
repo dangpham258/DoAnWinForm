@@ -16,5 +16,19 @@ namespace Presentation
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            BookingInformationForm next = new BookingInformationForm();
+            next.Show();
+            this.Hide();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            BookingConfirmForm next = new BookingConfirmForm();
+            next.Show();
+            this.Hide();
+        }
     }
 }

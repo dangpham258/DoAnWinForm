@@ -172,7 +172,7 @@ namespace Presentation
                     case "Đăng nhập thành công":
                         MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-                        registerForm mainForm = new registerForm();
+                        PassengerLoginForm mainForm = new PassengerLoginForm();
                         mainForm.Show();
                         break;
                 }
@@ -184,6 +184,19 @@ namespace Presentation
                     message += "\nChi tiết: " + ex.InnerException.Message;
 
                 MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void loginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có muốn thoát ứng dụng?", "Thoát ứng dụng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                Environment.Exit(0);
             }
         }
     }

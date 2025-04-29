@@ -48,9 +48,17 @@ namespace BusinessLogic
                 {
                     return "Tên người dùng không được để trống";
                 }
+                if (passenger.UserName.Trim().Contains(" "))
+                {
+                    return "Tên user không được chứa khoảng trắng";
+                }
                 if (string.IsNullOrEmpty(passenger.Password))
                 {
                     return "Mật khẩu không được để trống";
+                }
+                if (passenger.Password.Length < 6)
+                {
+                    return "Mật khẩu phải có ít nhất 6 ký tự";
                 }
                 if (string.IsNullOrEmpty(confirmPassword))
                 {

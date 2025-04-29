@@ -38,3 +38,13 @@ D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Deb
 D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\Newtonsoft.Json.dll
 D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\Newtonsoft.Json.xml
 D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.BookingFlightChooseForm.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.BookingConfirmForm.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.ControllerFlightChooseForm.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.ControllerLoginForm.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.CrewCheckForm.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.CrewLoginForm.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.SeatBookForm.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.TicketCancelForm.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.TicketHistoryForm.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.BookingInformationForm.resources
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.PassengerLoginForm.resources

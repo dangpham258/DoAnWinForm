@@ -16,5 +16,12 @@ namespace Presentation
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            ControllerLoginForm next = new ControllerLoginForm();
+            next.Show();
+            this.Hide();
+        }
     }
 }

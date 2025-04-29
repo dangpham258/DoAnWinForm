@@ -75,5 +75,19 @@ namespace Presentation
             dataGridViewFlightOffers.Columns["Price"].DefaultCellStyle.Format = "N0";
             dataGridViewFlightOffers.Columns["Price"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            PassengerLoginForm next = new PassengerLoginForm();
+            next.Show();
+            this.Hide();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            BookingInformationForm next = new BookingInformationForm();
+            next.Show();
+            this.Hide();
+        }
     }
 }
