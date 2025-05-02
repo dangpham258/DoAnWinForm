@@ -45,7 +45,10 @@
     <Compile Include="CheckSeat_Access.cs" />
     <Compile Include="CheckTicketInformation_Access.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="GetDataForDGV.cs" />
+    <Compile Include="LoadReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateFlightInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataTransferObject\DataTransferObject.csproj">

@@ -27,6 +27,7 @@ namespace Presentation
             passwordFlightCrewTxt.PasswordChar = '\0';
 
             controllerRadioBtn.Checked = true;
+
         }
 
         // đồng nhất màu button và panel tương ứng, loại bỏ viền để tạo sự liên tục
@@ -44,6 +45,12 @@ namespace Presentation
             // Đặt màu cho button và panel được chọn
             activeButton.BackColor = Color.White;
             activePanel.BackColor = Color.White;
+
+            // Xử lý Enter
+            if (activePanel == bookingPanel)
+                this.AcceptButton = loginAsPassengerBtn;
+            else
+                this.AcceptButton = loginAsFlightCrewBtn;
 
             // Loại bỏ viền nổi (FlatStyle)
             scheduleBtn.FlatStyle = FlatStyle.Flat;

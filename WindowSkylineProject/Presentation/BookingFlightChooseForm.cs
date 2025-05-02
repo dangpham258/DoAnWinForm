@@ -67,18 +67,18 @@ namespace Presentation
                 await Task.Run(async () => {
                     try
                     {
-                        // Gọi API để lấy dữ liệu JSON
-                        string jsonData = await serpClient.GetGoogleFlightsAsync(
-                            departureId,
-                            arrivalId,
-                            outboundDate,
-                            "VND",    // currency
-                            "en",     // hl
-                            "vn"      // gl
-                        );
+                // Gọi API để lấy dữ liệu JSON
+                string jsonData = await serpClient.GetGoogleFlightsAsync(
+                    departureId,
+                    arrivalId,
+                    outboundDate,
+                    "VND",    // currency
+                    "en",     // hl
+                    "vn"      // gl
+                );
 
                         // Chuyển JSON thành DataTable (thực hiện trên luồng phụ)
-                        DataTable dt = serpClient.GetFlightOffersDataTable(jsonData);
+                DataTable dt = serpClient.GetFlightOffersDataTable(jsonData);
                         DataView dv = new DataView(dt);
                         dv.RowFilter = $"DepartureAirport = '{departureId}' AND ArrivalAirport = '{arrivalId}' AND CabinClass = 'Economy'";
 
@@ -87,8 +87,8 @@ namespace Presentation
                             if (dv.Count > 0)
                             {
                                 dataGridViewFlightOffers.DataSource = dv;
-                                FormatDataGridView();
-                            }
+                FormatDataGridView();
+            }
                             else
                             {
                                 MessageBox.Show("Không tìm thấy chuyến bay phù hợp.", "Thông báo",
@@ -96,12 +96,12 @@ namespace Presentation
                             }
                         });
                     }
-                    catch (Exception ex)
-                    {
+            catch (Exception ex)
+            {
                         // Xử lý lỗi trên luồng phụ
                         this.Invoke((MethodInvoker)delegate {
-                            MessageBox.Show("Có lỗi xảy ra khi tìm chuyến bay: " + ex.Message, "Lỗi",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Có lỗi xảy ra khi tìm chuyến bay: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                         });
                     }
                 });
@@ -151,10 +151,10 @@ namespace Presentation
 
             if (result == DialogResult.Yes)
             {
-                PassengerLoginForm next = new PassengerLoginForm();
-                next.Show();
-                this.Hide();
-            }
+            PassengerLoginForm next = new PassengerLoginForm();
+            next.Show();
+            this.Hide();
+        }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -199,10 +199,10 @@ namespace Presentation
 
 
                 // Chuyển sang form tiếp theo
-                BookingInformationForm next = new BookingInformationForm();
-                next.Show();
-                this.Hide();
-            }
+            BookingInformationForm next = new BookingInformationForm();
+            next.Show();
+            this.Hide();
+        }
             catch (Exception ex)
             {
                 MessageBox.Show("Có lỗi khi lưu thông tin chuyến bay: " + ex.Message, "Lỗi",

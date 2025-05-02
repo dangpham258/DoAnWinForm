@@ -80,10 +80,10 @@ namespace Presentation
                 if (result && isFlightAdded)
                 {
                     MessageBox.Show("Đặt vé thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    PassengerLoginForm next = new PassengerLoginForm();
-                    next.Show();
-                    this.Hide();
-                }
+            PassengerLoginForm next = new PassengerLoginForm();
+            next.Show();
+            this.Hide();
+        }
                 else
                 {
                     MessageBox.Show("Đặt vé thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);

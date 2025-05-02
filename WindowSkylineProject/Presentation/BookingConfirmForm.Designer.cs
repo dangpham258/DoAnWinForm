@@ -241,6 +241,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BookingConfirmForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "BookingConfirmForm";
             this.Text = "Xác nhận thông tin đặt vé";
             this.Load += new System.EventHandler(this.BookingConfirmForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

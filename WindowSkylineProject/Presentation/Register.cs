@@ -24,6 +24,8 @@ namespace Presentation
 
             passwordTxt.PasswordChar = '\0';
             confirmPasswordTxt.PasswordChar = '\0';
+
+            this.AcceptButton = registerBtn;
         }
 
         private void registerBtn_Click(object sender, EventArgs e)
