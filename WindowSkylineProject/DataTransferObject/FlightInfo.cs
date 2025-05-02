@@ -10,8 +10,14 @@ namespace DataTransferObject
     {
         private int flightId;                // ID chuyến bay (tự tăng)
         private string flightNumber;         // Mã chuyến bay
+
+        private string airline;              // Hãng bay
+
         private string departCode;           // Mã sân bay khởi hành
         private string arriveCode;           // Mã sân bay đến
+
+        private DateTime departureDate;      // Ngày bay đi
+        private DateTime arrivalDate;        // Ngày hạ cánh chuyến bay đi
 
         private int? pilotId;                // Mã thành viên phi công (nullable)
         private string pilotName;            // Tên phi công trưởng (có thể null)
@@ -27,17 +33,18 @@ namespace DataTransferObject
         // Mảng ghế - true nếu ghế đã có người, false nếu ghế trống
         private bool[] seats;                // Mảng 10 ghế từ G1 đến G10
 
-        private int status;                  // Trạng thái vé: 0 - Chưa bay, 1 - Đã bay
-
         // Constructor đầy đủ với tất cả thông tin (bao gồm flightId)
-        public FlightInfo(int flightId, string flightNumber, string departCode, string arriveCode,
+        public FlightInfo(int flightId, string flightNumber, string airline, string departCode, string arriveCode, DateTime departureDate, DateTime arrivalDate,
                          int? pilotId, string pilotName, int? coPilotId, string coPilotName,
-                         int? attendantId, string attendantName, int passengerCount, bool[] seats, int status = 0)
+                         int? attendantId, string attendantName, int passengerCount, bool[] seats)
         {
             this.flightId = flightId;
             this.flightNumber = flightNumber;
+            this.airline = airline;
             this.departCode = departCode;
             this.arriveCode = arriveCode;
+            this.departureDate = departureDate;
+            this.arrivalDate = arrivalDate;
             this.pilotId = pilotId;
             this.pilotName = pilotName;
             this.coPilotId = coPilotId;
@@ -52,22 +59,23 @@ namespace DataTransferObject
             {
                 Array.Copy(seats, this.seats, 10);
             }
-            this.status = status;
         }
 
+        public FlightInfo() { }
+
         // Constructor không có flightId (dùng khi insert mới, vì flightId sẽ được SQL Server tự tăng)
-        public FlightInfo(string flightNumber, string departCode, string arriveCode,
+        public FlightInfo(string flightNumber, string airline, string departCode, string arriveCode, DateTime departureDate, DateTime arrivalDate,
                          int? pilotId = null, string pilotName = null, int? coPilotId = null, string coPilotName = null,
-                         int? attendantId = null, string attendantName = null, int passengerCount = 0, int status = 0)
-            : this(0, flightNumber, departCode, arriveCode, pilotId, pilotName, coPilotId, coPilotName,
-                  attendantId, attendantName, passengerCount, new bool[10], status)
+                         int? attendantId = null, string attendantName = null, int passengerCount = 0)
+            : this(0, flightNumber, airline, departCode, arriveCode, departureDate, arrivalDate, pilotId, pilotName, coPilotId, coPilotName,
+                  attendantId, attendantName, passengerCount, new bool[10])
         {
         }
 
         // Constructor tối thiểu chỉ với thông tin chuyến bay (không có thông tin phi hành đoàn)
-        public FlightInfo(string flightNumber, string departCode, string arriveCode)
-            : this(0, flightNumber, departCode, arriveCode, null, null, null, null,
-                  null, null, 0, new bool[10], 0)
+        public FlightInfo(string flightNumber, string airline, string departCode, string arriveCode, DateTime departureDate, DateTime arrivalDate)
+            : this(0, flightNumber, airline, departCode, arriveCode, departureDate, arrivalDate, null, null, null, null,
+                  null, null, 0, new bool[10])
         {
         }
 
@@ -83,6 +91,11 @@ namespace DataTransferObject
             get { return flightNumber; }
             set { flightNumber = value; }
         }
+        public string Airline
+        {
+            get { return airline; }           // Lấy hãng bay
+            set { airline = value; }          // Gán hãng bay
+        }
 
         public string DepartCode
         {
@@ -94,6 +107,18 @@ namespace DataTransferObject
         {
             get { return arriveCode; }
             set { arriveCode = value; }
+        }
+
+        public DateTime DepartureDate
+        {
+            get { return departureDate; }     // Lấy ngày bay đi
+            set { departureDate = value; }    // Gán ngày bay đi
+        }
+
+        public DateTime ArrivalDate
+        {
+            get { return arrivalDate; }       // Lấy ngày hạ cánh chuyến bay đi
+            set { arrivalDate = value; }      // Gán ngày hạ cánh chuyến bay đi
         }
 
         public int? PilotID
@@ -136,12 +161,6 @@ namespace DataTransferObject
         {
             get { return passengerCount; }
             set { passengerCount = value; }
-        }
-
-        public int Status
-        {
-            get { return status; }            // Lấy trạng thái vé
-            set { status = value; }           // Gán trạng thái vé
         }
 
         // Phương thức để kiểm tra và thiết lập ghế

@@ -24,6 +24,8 @@ namespace Presentation
 
             passwordTxt.PasswordChar = '\0';
             confirmPasswordTxt.PasswordChar = '\0';
+
+            this.AcceptButton = registerBtn;
         }
 
         private void registerBtn_Click(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace Presentation
                 Passenger passenger = new Passenger(usernameTxt.Text, passwordTxt.Text, fullnameTxt.Text);
                 string confirmPassword = confirmPasswordTxt.Text;
 
-                CheckPassengerLogin_Register checkPassengerRegister = new CheckPassengerLogin_Register();
+                CheckLogin_Register checkPassengerRegister = new CheckLogin_Register();
                 string verifyStr = checkPassengerRegister.Register(passenger, confirmPassword);
 
                 switch (verifyStr)

@@ -13,3 +13,12 @@ D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataTransferObject\o
 D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataTransferObject\bin\Debug\Newtonsoft.Json.dll
 D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataTransferObject\bin\Debug\Newtonsoft.Json.xml
 D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTran.832C1324.Up2Date
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\bin\Debug\DataTransferObject.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\bin\Debug\DataTransferObject.pdb
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\bin\Debug\Newtonsoft.Json.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\bin\Debug\Newtonsoft.Json.xml
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.csproj.AssemblyReference.cache
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.csproj.CoreCompileInputs.cache
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTran.832C1324.Up2Date
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.pdb

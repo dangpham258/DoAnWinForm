@@ -37,28 +37,33 @@
             // 
             // btnXepLich
             // 
-            this.btnXepLich.Location = new System.Drawing.Point(69, 89);
+            this.btnXepLich.Location = new System.Drawing.Point(104, 139);
+            this.btnXepLich.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXepLich.Name = "btnXepLich";
-            this.btnXepLich.Size = new System.Drawing.Size(168, 63);
+            this.btnXepLich.Size = new System.Drawing.Size(252, 98);
             this.btnXepLich.TabIndex = 1;
             this.btnXepLich.Text = "Xếp lịch chuyến bay";
             this.btnXepLich.UseVisualStyleBackColor = true;
+            this.btnXepLich.Click += new System.EventHandler(this.btnXepLich_Click);
             // 
             // btnBaoCao
             // 
-            this.btnBaoCao.Location = new System.Drawing.Point(69, 256);
+            this.btnBaoCao.Location = new System.Drawing.Point(104, 400);
+            this.btnBaoCao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBaoCao.Name = "btnBaoCao";
-            this.btnBaoCao.Size = new System.Drawing.Size(168, 63);
+            this.btnBaoCao.Size = new System.Drawing.Size(252, 98);
             this.btnBaoCao.TabIndex = 3;
             this.btnBaoCao.Text = "Tạo báo cáo chuyến bay";
             this.btnBaoCao.UseVisualStyleBackColor = true;
+            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             // 
             // btnBack
             // 
             this.btnBack.Image = global::Presentation.Properties.Resources.back;
-            this.btnBack.Location = new System.Drawing.Point(1087, 12);
+            this.btnBack.Location = new System.Drawing.Point(1310, 14);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(29, 37);
+            this.btnBack.Size = new System.Drawing.Size(44, 58);
             this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBack.TabIndex = 72;
             this.btnBack.TabStop = false;
@@ -69,9 +74,10 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(1134, 12);
+            this.btnClose.Location = new System.Drawing.Point(1381, 14);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(36, 37);
+            this.btnClose.Size = new System.Drawing.Size(54, 58);
             this.btnClose.TabIndex = 73;
             this.btnClose.Text = "X";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -80,14 +86,15 @@
             // 
             // ControllerLoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.ClientSize = new System.Drawing.Size(1773, 1177);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnBaoCao);
             this.Controls.Add(this.btnXepLich);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ControllerLoginForm";
             this.Text = "ControllerLoginForm";
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();

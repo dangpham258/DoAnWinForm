@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    public class CrewMember : Person
+    public class CrewMember : Person, ILogin
     {
         // Các field (biến thành viên)
         private string jobType;              // Loại công việc
@@ -16,8 +16,11 @@ namespace DataTransferObject
         private string cccd;                 // CCCD (Căn cước công dân)
         private int status;               // 1 nếu phi công đó rảnh, 0 nếu không
 
+        public string TableInDB => "Table_CrewDatabase";
+
         // Constructor đầy đủ (bao gồm personId)
-        public CrewMember(int personId, string userName, string password, string jobType, int yearsOfExperience, string phoneNumber, string fullName, string cccd, int status) : base(personId, userName, password)
+        public CrewMember(int personId, string userName, string password, 
+            string jobType, int yearsOfExperience, string phoneNumber, string fullName, string cccd, int status) : base(personId, userName, password)
         {
             this.jobType = jobType;
             this.yearsOfExperience = yearsOfExperience;
@@ -28,7 +31,8 @@ namespace DataTransferObject
         }
 
         // Constructor không có personId;
-        public CrewMember(string userName, string password, string jobType, int yearsOfExperience, string phoneNumber, string fullName, string cccd, int status) : base(userName, password)
+        public CrewMember(string userName, string password, 
+            string jobType, int yearsOfExperience, string phoneNumber, string fullName, string cccd, int status) : base(userName, password)
         {
             this.jobType = jobType;
             this.yearsOfExperience = yearsOfExperience;
@@ -36,6 +40,12 @@ namespace DataTransferObject
             this.fullName = fullName;
             this.cccd = cccd;
             this.status = status;
+        }
+
+        // Constructor cho đăng nhập
+        public CrewMember(string userName, string password)
+            : base(userName, password)
+        {
         }
 
         // Các properties (getters và setters)

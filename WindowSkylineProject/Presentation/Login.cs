@@ -25,6 +25,9 @@ namespace Presentation
 
             passwordPassengerTxt.PasswordChar = '\0';
             passwordFlightCrewTxt.PasswordChar = '\0';
+
+            controllerRadioBtn.Checked = true;
+
         }
 
         // đồng nhất màu button và panel tương ứng, loại bỏ viền để tạo sự liên tục
@@ -35,10 +38,19 @@ namespace Presentation
             bookingBtn.BackColor = Color.LightGray;
             scheduleFlightPanel.BackColor = Color.LightGray;
             bookingPanel.BackColor = Color.LightGray;
+            
+            passwordPassengerTxt.PasswordChar = '\0';
+            passwordFlightCrewTxt.PasswordChar = '\0';
 
             // Đặt màu cho button và panel được chọn
             activeButton.BackColor = Color.White;
             activePanel.BackColor = Color.White;
+
+            // Xử lý Enter
+            if (activePanel == bookingPanel)
+                this.AcceptButton = loginAsPassengerBtn;
+            else
+                this.AcceptButton = loginAsFlightCrewBtn;
 
             // Loại bỏ viền nổi (FlatStyle)
             scheduleBtn.FlatStyle = FlatStyle.Flat;
@@ -53,6 +65,8 @@ namespace Presentation
             scheduleFlightPanel.Visible = false;
             ChangeActivePanel(bookingBtn, bookingPanel);
 
+            usernamePassengerTxt.ForeColor = Color.Gray;
+            passwordPassengerTxt.ForeColor = Color.Gray;
             usernamePassengerTxt.Text = "Ex: username";
             passwordPassengerTxt.Text = "Ex: password";
         }
@@ -63,6 +77,8 @@ namespace Presentation
             bookingPanel.Visible = false;
             ChangeActivePanel(scheduleBtn, scheduleFlightPanel);
 
+            usernameFlightCrewTxt.ForeColor = Color.Gray;
+            passwordFlightCrewTxt.ForeColor = Color.Gray;
             usernameFlightCrewTxt.Text = "Ex: username";
             passwordFlightCrewTxt.Text = "Ex: password";
         }
@@ -155,7 +171,7 @@ namespace Presentation
             Passenger passenger = new Passenger(usernamePassengerTxt.Text, passwordPassengerTxt.Text);
             try
             {
-                CheckPassengerLogin_Register checkPassengerLogin = new CheckPassengerLogin_Register();
+                CheckLogin_Register checkPassengerLogin = new CheckLogin_Register();
                 string verifyStr = checkPassengerLogin.CheckLogin(passenger);
 
                 switch (verifyStr)
@@ -173,6 +189,55 @@ namespace Presentation
                         MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
                         PassengerLoginForm mainForm = new PassengerLoginForm();
+                        mainForm.Show();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                string message = "Lỗi đăng nhập: " + ex.Message;
+                if (ex.InnerException != null)
+                    message += "\nChi tiết: " + ex.InnerException.Message;
+
+                MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void loginAsFlightCrewBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CheckLogin_Register checkLogin = new CheckLogin_Register();
+                string verifyStr = "";
+
+                Form mainForm = null;
+
+                if (controllerRadioBtn.Checked)
+                {
+                    Controller controller = new Controller(usernameFlightCrewTxt.Text, passwordFlightCrewTxt.Text);
+                    verifyStr = checkLogin.CheckLogin(controller);
+                    mainForm = new ControllerLoginForm();
+                }
+                else
+                {
+                    CrewMember flightCrew = new CrewMember(usernameFlightCrewTxt.Text, passwordFlightCrewTxt.Text);
+                    verifyStr = checkLogin.CheckLogin(flightCrew);
+                    mainForm = new CrewLoginForm();
+                }
+                switch (verifyStr)
+                {
+                    case "Tên người dùng không được để trống":
+                        MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        break;
+                    case "Mật khẩu không được để trống":
+                        MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        break;
+                    case "Tên người dùng hoặc mật khẩu không đúng":
+                        MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        break;
+                    case "Đăng nhập thành công":
+                        MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
                         mainForm.Show();
                         break;
                 }

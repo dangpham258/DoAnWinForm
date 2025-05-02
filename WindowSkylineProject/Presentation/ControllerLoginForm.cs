@@ -36,5 +36,19 @@ namespace Presentation
             if (result == DialogResult.Yes)
                 Environment.Exit(0);
         }
+
+        private void btnXepLich_Click(object sender, EventArgs e)
+        {
+            ControllerFlightChooseForm next = new ControllerFlightChooseForm();
+            next.Show();
+            this.Hide();
+        }
+
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            ReportFlightChooseForm next = new ReportFlightChooseForm();
+            next.Show();
+            this.Hide();
+        }
     }
 }

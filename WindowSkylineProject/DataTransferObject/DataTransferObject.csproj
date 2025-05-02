@@ -47,6 +47,7 @@
     <Compile Include="Controller.cs" />
     <Compile Include="CrewMember.cs" />
     <Compile Include="FlightInfo.cs" />
+    <Compile Include="ILogin.cs" />
     <Compile Include="Passenger.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

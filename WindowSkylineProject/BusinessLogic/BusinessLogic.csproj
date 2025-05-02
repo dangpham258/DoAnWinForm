@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CheckPassengerLogin_Register.cs" />
+    <Compile Include="AddCrewMember.cs" />
+    <Compile Include="CheckLogin_Register.cs" />
+    <Compile Include="CheckForLoadToDGV.cs" />
+    <Compile Include="ReportManage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

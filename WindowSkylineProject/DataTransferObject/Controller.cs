@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    public class Controller : Person
+    public class Controller : Person, ILogin
     {
+        public string TableInDB => "Table_ControllerDatabase";
+
         // Constructor đầy đủ, bao gồm personId
         public Controller(int personId, string userName, string password)
             : base(personId, userName, password)

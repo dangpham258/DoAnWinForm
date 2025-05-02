@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace DataTransferObject
 {
-    public class Passenger : Person
+    public class Passenger : Person, ILogin
     {
         // Các field bổ sung (có thể null)
         private string phoneNumber;   // Số điện thoại
         private string fullName;      // Họ và tên
         private string cccd;          // Căn cước công dân (CCCD)
+
+        public string TableInDB => "Table_UserDatabase";
 
         // Constructor đầy đủ (bao gồm personId)
         public Passenger(int personId, string userName, string password,
