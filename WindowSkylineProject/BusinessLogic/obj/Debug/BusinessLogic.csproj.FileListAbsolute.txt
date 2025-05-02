@@ -1,0 +1,50 @@
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\BusinessLogic\bin\Debug\BusinessLogic.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\BusinessLogic\bin\Debug\BusinessLogic.pdb
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\BusinessLogic\bin\Debug\DataAccess.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\BusinessLogic\bin\Debug\DataTransferObject.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\BusinessLogic\bin\Debug\DataAccess.pdb
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\BusinessLogic\bin\Debug\DataTransferObject.pdb
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\BusinessLogic\obj\Debug\Business.CF5D6E35.Up2Date
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\BusinessLogic.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\BusinessLogic.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\DataAccess.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\DataTransferObject.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\DataAccess.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\DataTransferObject.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\Business.CF5D6E35.Up2Date
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+D:\WindowSkylineProjectGit\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\BusinessLogic.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\BusinessLogic.pdb
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\DataAccess.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\DataTransferObject.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\DataAccess.pdb
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\DataTransferObject.pdb
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\Business.CF5D6E35.Up2Date
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\bin\Debug\BusinessLogic.dll
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\bin\Debug\BusinessLogic.pdb
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\bin\Debug\DataAccess.dll
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\bin\Debug\DataTransferObject.dll
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\bin\Debug\DataAccess.pdb
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\bin\Debug\DataTransferObject.pdb
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\obj\Debug\Business.CF5D6E35.Up2Date
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\WindowSkylineProject3\WindowSkylineProject\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.pdb
