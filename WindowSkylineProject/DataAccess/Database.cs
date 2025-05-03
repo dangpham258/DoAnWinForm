@@ -25,7 +25,7 @@ namespace DataAccess
 
         public Database()
         {
-            string strCnn = @"Data Source=WIN;Database=Skyline;Persist Security Info=True;User ID=sa;Password=thiendang;MultipleActiveResultSets=True;";
+            string strCnn = @"Data Source=LAPTOP-CPJ5IEEE;Database=Skyline;Persist Security Info=True;User ID=sa;Password=PTTDang@2005;MultipleActiveResultSets=True;";
             sqlConn = new SqlConnection(strCnn);
         }
 

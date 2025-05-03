@@ -14,7 +14,7 @@ namespace BusinessLogic
         // Load vào form ControllerFlightChoose
         public DataTable ForChoosingFlight()
         {
-            return load.GetFlightsWithoutCrew();
+            return load.GetFlightsPrioritizeWithoutCrew();
         }
         public DataTable ForChoosingPilot()
         {

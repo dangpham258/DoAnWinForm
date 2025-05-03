@@ -80,10 +80,6 @@ D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\obj\De
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.exe
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.pdb
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.ReportFlightChooseForm.resources
-D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\Microsoft.ReportViewer.Common.dll
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\bin\Debug\Microsoft.ReportViewer.Design.dll
@@ -217,3 +213,4 @@ D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\Presentation\obj\De
 D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.exe
 D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.pdb
 D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.SeatChangeForm.resources
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.SeatChangeForm.resources

@@ -11,17 +11,22 @@ namespace DataAccess
     public class GetDataForDGV
     {
         Database db = new Database();
-        public DataTable GetFlightsWithoutCrew()
+        public DataTable GetFlightsPrioritizeWithoutCrew()
         {
             try
             {
-                string sqlStr = "SELECT * FROM Table_FlightInfoDatabase " +
-                    "WHERE PilotID IS NULL OR CoPilotID IS NULL OR AttendantID IS NULL";
+                string sqlStr = @"SELECT * FROM Table_FlightInfoDatabase
+                        WHERE CAST(DepartureDate AS DATE) = CAST(GETDATE() AS DATE)
+                        ORDER BY CASE 
+                            WHEN PilotID IS NULL OR CoPilotID IS NULL OR AttendantID IS NULL THEN 0 
+                            ELSE 1 
+                        END,
+                        DepartureDate ASC";
                 return db.ExecuteQuery(sqlStr);
             }
             catch (Exception ex)
             {
-                throw new DataAccessException("Lỗi khi lấy dữ liệu chuyến bay (thiếu phi hành đoàn)", ex);
+                throw new DataAccessException("Lỗi khi lấy dữ liệu chuyến bay trong ngày (ưu tiên thiếu phi hành đoàn)", ex);
             }
         }
 
