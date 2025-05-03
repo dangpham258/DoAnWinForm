@@ -35,3 +35,16 @@ D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\D
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\Business.CF5D6E35.Up2Date
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.dll
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\BusinessLogic.dll
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\BusinessLogic.pdb
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\DataAccess.dll
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\DataTransferObject.dll
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\DataAccess.pdb
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\DataTransferObject.pdb
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\Business.CF5D6E35.Up2Date
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\BusinessLogic\obj\Debug\BusinessLogic.pdb

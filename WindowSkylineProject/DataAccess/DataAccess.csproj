@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckLogin_RegisterAccess.cs" />
+    <Compile Include="CheckSeat_Access.cs" />
+    <Compile Include="CheckTicketInformation_Access.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="GetDataForDGV.cs" />
     <Compile Include="LoadReport.cs" />

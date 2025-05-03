@@ -61,7 +61,7 @@
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(1056, 66);
             this.btnHuy.TabIndex = 2;
-            this.btnHuy.Text = "Gửi yêu cầu hủy";
+            this.btnHuy.Text = "Hủy vé chuyến bay";
             this.btnHuy.UseVisualStyleBackColor = true;
             // 
             // btnBack

@@ -27,6 +27,7 @@ namespace DataTransferObject
         private string fullName;             // Họ và tên hành khách
         private string cccd;                 // Căn cước công dân (CCCD)
 
+        private string userName;              // Tên đăng nhập của người login mua
         private int status;                  // Trạng thái vé: 0 - Chưa dùng, 1 - Đã dùng, 2 - Đã hủy
 
 
@@ -34,7 +35,7 @@ namespace DataTransferObject
         public Ticket(int ticketId, string flightNumber, string airline, string departCode, string arriveCode,
                       DateTime departureDate, DateTime arrivalDate,
                       string classType, string seatNumber, int price,
-                      string phoneNumber, string fullName, string cccd, int status = 0)
+                      string phoneNumber, string fullName, string cccd, string userName, int status = 0)
         {
             this.ticketId = ticketId;
             this.flightNumber = flightNumber;
@@ -49,6 +50,7 @@ namespace DataTransferObject
             this.phoneNumber = phoneNumber;
             this.fullName = fullName;
             this.cccd = cccd;
+            this.userName = userName;
             this.status = status;
         }
 
@@ -56,9 +58,9 @@ namespace DataTransferObject
         public Ticket(string flightNumber, string airline, string departCode, string arriveCode,
                       DateTime departureDate, DateTime arrivalDate,
                       string classType, string seatNumber, int price,
-                      string phoneNumber, string fullName, string cccd, int status = 0)
+                      string phoneNumber, string fullName, string cccd, string userName, int status = 0)
             : this(0, flightNumber, airline, departCode, arriveCode, departureDate, arrivalDate,
-                   classType, seatNumber, price, phoneNumber, fullName, cccd, status)
+                   classType, seatNumber, price, phoneNumber, fullName, cccd, userName, status)
         {
         }
 
@@ -141,6 +143,12 @@ namespace DataTransferObject
             get { return cccd; }              // Lấy căn cước công dân (CCCD)
             set { cccd = value; }             // Gán căn cước công dân (CCCD)
         }
+
+        public string UserName
+        {
+            get { return userName; }          // Lấy tên đăng nhập
+            set { userName = value; }         // Gán tên đăng nhập
+        }   
 
         public int Status
         {

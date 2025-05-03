@@ -33,7 +33,7 @@ namespace DataAccess
             }
             catch (Exception ex)
             {
-                throw new DataAccessException("Lỗi kiểm tra tài khoản", ex);
+                throw new DataAccessException("Lỗi kiểm tra tài khoản: ", ex);
             }
         }
 
@@ -53,7 +53,7 @@ namespace DataAccess
             }
             catch (Exception ex)
             {
-                throw new DataAccessException("Lỗi đăng ký tài khoản", ex);
+                throw new DataAccessException("Lỗi đăng ký tài khoản: ", ex);
             }
         }
     }

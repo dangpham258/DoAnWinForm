@@ -22,3 +22,12 @@ D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTran.832C1324.Up2Date
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.dll
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.pdb
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\DataTransferObject\bin\Debug\DataTransferObject.dll
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\DataTransferObject\bin\Debug\DataTransferObject.pdb
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\DataTransferObject\bin\Debug\Newtonsoft.Json.dll
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\DataTransferObject\bin\Debug\Newtonsoft.Json.xml
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.csproj.AssemblyReference.cache
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.csproj.CoreCompileInputs.cache
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTran.832C1324.Up2Date
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.dll
+D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\DataTransferObject\obj\Debug\DataTransferObject.pdb

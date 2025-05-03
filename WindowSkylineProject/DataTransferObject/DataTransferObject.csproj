@@ -44,12 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirportData.cs" />
+    <Compile Include="BookingSession.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="CrewMember.cs" />
     <Compile Include="FlightInfo.cs" />
     <Compile Include="ILogin.cs" />
     <Compile Include="Passenger.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="PersonLoginSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SerpClient.cs" />
     <Compile Include="Ticket.cs" />

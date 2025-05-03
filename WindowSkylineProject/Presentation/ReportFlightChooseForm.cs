@@ -98,7 +98,7 @@ namespace Presentation
 
                 object dateValue = selectedRow.Cells[5].Value;
                 if (dateValue != null && DateTime.TryParse(dateValue.ToString(), out DateTime flightDate))
-                {
+                {   
                     flightDatePicker.Value = flightDate;
                 }
                 else

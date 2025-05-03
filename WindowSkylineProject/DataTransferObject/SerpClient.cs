@@ -11,7 +11,7 @@ namespace WindowSkylineProject
     public class SerpClient
     {
         // Serp API này giới hạn 100 lần mỗi tháng, lên web login tạo tài khoản lấy API 
-        private static string serpApiKey = "80674a63504d81062e0cfc34693f97c74af25b21bda76bd9dc39b54d1f2203a5";
+        private static string serpApiKey = "4153018b0a4a828499a3c0e35a8dbd6b6c4051cc2fad08c2f839e73ec703f226";
 
         public async Task<string> GetGoogleFlightsAsync(
             string departureId,

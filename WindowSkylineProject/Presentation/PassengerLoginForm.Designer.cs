@@ -33,6 +33,7 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnSeatChange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(77, 362);
+            this.btnHuy.Location = new System.Drawing.Point(77, 501);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(168, 63);
             this.btnHuy.TabIndex = 2;
@@ -91,11 +92,22 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnSeatChange
+            // 
+            this.btnSeatChange.Location = new System.Drawing.Point(77, 355);
+            this.btnSeatChange.Name = "btnSeatChange";
+            this.btnSeatChange.Size = new System.Drawing.Size(168, 63);
+            this.btnSeatChange.TabIndex = 73;
+            this.btnSeatChange.Text = "Đổi chỗ ngồi";
+            this.btnSeatChange.UseVisualStyleBackColor = true;
+            this.btnSeatChange.Click += new System.EventHandler(this.btnSeatChange_Click);
+            // 
             // PassengerLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.btnSeatChange);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnHuy);
@@ -117,5 +129,6 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.PictureBox btnBack;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnSeatChange;
     }
 }

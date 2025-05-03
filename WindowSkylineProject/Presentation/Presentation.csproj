@@ -120,6 +120,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +148,12 @@
     </Compile>
     <Compile Include="SeatBookForm.Designer.cs">
       <DependentUpon>SeatBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeatChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatChangeForm.Designer.cs">
+      <DependentUpon>SeatChangeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SkylineDataSet.cs">
       <DependentUpon>SkylineDataSet.xsd</DependentUpon>
@@ -196,6 +207,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -216,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SeatBookForm.resx">
       <DependentUpon>SeatBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatChangeForm.resx">
+      <DependentUpon>SeatChangeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TicketCancelForm.resx">
       <DependentUpon>TicketCancelForm.cs</DependentUpon>
@@ -262,19 +277,31 @@
     <None Include="Resources\back.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="Resources\swap2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconDiemDi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconDiemDen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\windowairline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BanDoSanBay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MayBayBay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chongoi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SoDoGheNgoi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SeatChange.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

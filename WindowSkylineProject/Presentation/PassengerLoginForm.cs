@@ -57,5 +57,12 @@ namespace Presentation
             next.Show();
             this.Hide();
         }
+
+        private void btnSeatChange_Click(object sender, EventArgs e)
+        {
+            SeatChangeForm next = new SeatChangeForm();
+            next.Show();
+            this.Hide();
+        }
     }
 }
