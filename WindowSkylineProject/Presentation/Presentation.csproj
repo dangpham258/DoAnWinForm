@@ -149,6 +149,12 @@
     <Compile Include="SeatBookForm.Designer.cs">
       <DependentUpon>SeatBookForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SeatChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatChangeForm.Designer.cs">
+      <DependentUpon>SeatChangeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SkylineDataSet.cs">
       <DependentUpon>SkylineDataSet.xsd</DependentUpon>
     </Compile>
@@ -223,6 +229,9 @@
     <EmbeddedResource Include="SeatBookForm.resx">
       <DependentUpon>SeatBookForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SeatChangeForm.resx">
+      <DependentUpon>SeatChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TicketCancelForm.resx">
       <DependentUpon>TicketCancelForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -290,6 +299,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SoDoGheNgoi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SeatChange.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

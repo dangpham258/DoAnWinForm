@@ -25,11 +25,11 @@ namespace DataAccess
                     INSERT INTO Table_TicketDatabase (
                         FullName, PhoneNumber, CCCD, DepartCode, ArriveCode,
                         FlightNumber, Airline, DepartureDate, ArrivalDate,
-                        ClassType, SeatNumber, Price
+                        ClassType, SeatNumber, Price, UserName
                     ) VALUES (
                         @FullName, @PhoneNumber, @CCCD, @DepartCode, @ArriveCode,
                         @FlightNumber, @Airline, @DepartureDate, @ArrivalDate,
-                        @ClassType, @SeatNumber, @Price
+                        @ClassType, @SeatNumber, @Price, @UserName
                     )";
 
                 List<SqlParameter> parameters = new List<SqlParameter>
@@ -45,7 +45,8 @@ namespace DataAccess
                     new SqlParameter("@ArrivalDate", ticket.ArrivalDate),
                     new SqlParameter("@ClassType", ticket.ClassType),
                     new SqlParameter("@SeatNumber", ticket.SeatNumber),
-                    new SqlParameter("@Price", ticket.Price)
+                    new SqlParameter("@Price", ticket.Price),
+                    new SqlParameter("@UserName", ticket.UserName)
                 };
 
                 int rowsAffected = ExecuteNonQuery(query, parameters);
@@ -167,5 +168,29 @@ namespace DataAccess
             }
         }
 
+        public DataTable GetCurrentTickets(string username)
+        {
+            try
+            {
+                string query = @"
+            SELECT TicketID, FlightNumber, Airline, DepartCode, ArriveCode, 
+                   DepartureDate, ArrivalDate, ClassType, SeatNumber, Price, 
+                   PhoneNumber, FullName, CCCD, Status
+            FROM Table_TicketDatabase 
+            WHERE UserName = @UserName AND Status = 0";
+
+                List<SqlParameter> parameters = new List<SqlParameter>
+        {
+            new SqlParameter("@UserName", username)
+        };
+
+                DataTable result = ExecuteQuery(query, parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Lỗi khi lấy thông tin vé hiện tại: ", ex);
+            }
+        }
     }
 }

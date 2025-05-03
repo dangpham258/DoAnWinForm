@@ -194,7 +194,8 @@ namespace Presentation
                     price: Convert.ToInt32(row.Cells["Price"].Value),
                     phoneNumber: null,       // chưa có, null tạm
                     fullName: null,       // null tạm
-                    cccd: null        // null tạm
+                    cccd: null,        // null tạm
+                    userName: PersonLoginSession.CurrentPerson.UserName // tên đăng nhập của người login
                 );
 
 

@@ -187,6 +187,13 @@ namespace Presentation
                         break;
                     case "Đăng nhập thành công":
                         MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        PersonLoginSession.CurrentPerson = new Person
+                        (
+                            userName: usernamePassengerTxt.Text,
+                            password: passwordPassengerTxt.Text
+                        );
+
                         this.Hide();
                         PassengerLoginForm mainForm = new PassengerLoginForm();
                         mainForm.Show();

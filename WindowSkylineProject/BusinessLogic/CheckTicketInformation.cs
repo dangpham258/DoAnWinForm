@@ -2,6 +2,7 @@
 using DataTransferObject;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,19 @@ namespace BusinessLogic
             catch (Exception ex)
             {
                 throw new Exception("Lỗi nghiệp vụ khi lưu thông tin máy bay: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable GetCurrentNotUseTicket(string username)
+        {
+            try
+            {
+                CheckTicketInformation_Access ticketAccess = new CheckTicketInformation_Access();
+                return ticketAccess.GetCurrentTickets(username);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi nghiệp vụ khi lấy vé chưa sử dụng: " + ex.Message, ex);
             }
         }
     }
