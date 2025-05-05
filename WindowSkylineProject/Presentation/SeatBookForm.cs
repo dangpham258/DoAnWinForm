@@ -58,7 +58,7 @@ namespace Presentation
                 {
                     // Lấy số ghế từ tên của RadioButton (thường là "radioButton1", "radioButton2",...)
                     string buttonName = radioButton.Name;
-                    string seatNumber = "G" + buttonName.Substring(11).PadLeft(2, '0'); // Chuyển đổi "radioButton1" -> "G01"
+                    string seatNumber = "G" + buttonName.Substring(11); // Chuyển đổi "radioButton1" -> "G1"
                     return seatNumber;
                 }
             }
@@ -80,7 +80,7 @@ namespace Presentation
             {
                 if (control is RadioButton rb)
                 {
-                    string seatName = "G" + rb.Name.Substring(11).PadLeft(1, '0'); // "radioButton1" => G1
+                    string seatName = "G" + rb.Name.Substring(11); // "radioButton1" => G1
                     if (seatStatus.ContainsKey(seatName) && seatStatus[seatName])
                     {
                         rb.Enabled = false;

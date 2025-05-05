@@ -28,7 +28,6 @@ namespace Presentation
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            // Kiểm tra dữ liệu nhập vào
             string error = CheckBookingInformationForm.Validate(txtHoten.Text, txtSdt.Text, txtCccd.Text);
             if (error != null)
             {
@@ -36,8 +35,6 @@ namespace Presentation
                 return;
             }
 
-
-            // Cập nhật thông tin vào đối tượng vé hiện tại
             BookingSession.CurrentTicket.FullName = txtHoten.Text.Trim();
             BookingSession.CurrentTicket.PhoneNumber = txtSdt.Text.Trim();
             BookingSession.CurrentTicket.CCCD = txtCccd.Text.Trim();
@@ -49,7 +46,6 @@ namespace Presentation
 
         private void txtHoten_TextChanged(object sender, EventArgs e)
         {
-            // Chỉ cho phép chữ cái không dấu và khoảng trắng
             TextBox txt = sender as TextBox;
             int selectionStart = txt.SelectionStart;
             string filtered = new string(txt.Text.Where(c => char.IsLetter(c) && c <= 'z' || c == ' ').ToArray());
@@ -59,7 +55,6 @@ namespace Presentation
 
         private void txtSdt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Chỉ cho nhập số
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -74,7 +69,6 @@ namespace Presentation
 
         private void txtCccd_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Chỉ cho nhập số
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;

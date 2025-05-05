@@ -15,5 +15,10 @@ namespace BusinessLogic
         {
             return access.GetSeatStatus(flightNumber, departureDate, arrivalDate);
         }
+
+        public bool ChangeSeat(string ticketID, string newSeatNumber, string flightNumber, DateTime departureDate, DateTime arrivalDate)
+        {
+            return access.ChangeSeat(ticketID, newSeatNumber, flightNumber, departureDate, arrivalDate);
+        }
     }
 }

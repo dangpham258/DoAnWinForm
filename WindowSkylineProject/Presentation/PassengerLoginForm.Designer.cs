@@ -31,9 +31,10 @@
             this.btnDat = new System.Windows.Forms.Button();
             this.btnXem = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSeatChange = new System.Windows.Forms.Button();
+            this.btnChangeInfo = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             this.btnFeedback = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
@@ -109,6 +110,27 @@
             this.btnSeatChange.UseVisualStyleBackColor = true;
             this.btnSeatChange.Click += new System.EventHandler(this.btnSeatChange_Click);
             // 
+            // btnChangeInfo
+            // 
+            this.btnChangeInfo.Location = new System.Drawing.Point(507, 345);
+            this.btnChangeInfo.Name = "btnChangeInfo";
+            this.btnChangeInfo.Size = new System.Drawing.Size(168, 63);
+            this.btnChangeInfo.TabIndex = 74;
+            this.btnChangeInfo.Text = "Đổi thông tin hành khách";
+            this.btnChangeInfo.UseVisualStyleBackColor = true;
+            this.btnChangeInfo.Click += new System.EventHandler(this.btnChangeInfo_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Image = global::Presentation.Properties.Resources.back;
+            this.btnBack.Location = new System.Drawing.Point(1079, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(29, 37);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 71;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // btnFeedback
             // 
             this.btnFeedback.Location = new System.Drawing.Point(116, 650);
@@ -124,6 +146,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.btnChangeInfo);
             this.ClientSize = new System.Drawing.Size(1773, 1177);
             this.Controls.Add(this.btnFeedback);
             this.Controls.Add(this.btnSeatChange);
@@ -150,6 +174,7 @@
         private System.Windows.Forms.PictureBox btnBack;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSeatChange;
+        private System.Windows.Forms.Button btnChangeInfo;
         private System.Windows.Forms.Button btnFeedback;
     }
 }

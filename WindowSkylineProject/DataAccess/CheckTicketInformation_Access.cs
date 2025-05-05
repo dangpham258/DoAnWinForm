@@ -17,6 +17,25 @@ namespace DataAccess
             conn = base.sqlConn;
         }
 
+        public bool UpdateExpiredTickets()
+        {
+            try
+            {
+                string query = @"
+            UPDATE Table_TicketDatabase
+            SET Status = 1
+            WHERE Status = 0 
+            AND DepartureDate < GETDATE()";
+
+                int rowsAffected = ExecuteNonQuery(query);
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Lỗi khi cập nhật vé quá hạn: ", ex);
+            }
+        }
+
         public bool AddTicket(Ticket ticket)
         {
             try
@@ -190,6 +209,168 @@ namespace DataAccess
             catch (Exception ex)
             {
                 throw new DataAccessException("Lỗi khi lấy thông tin vé hiện tại: ", ex);
+            }
+        }
+
+        public bool CancelTicket(string ticketID)
+        {
+            bool result = false;
+            conn.Open();
+            using (var transaction = conn.BeginTransaction())
+            {
+                try
+                {
+                    // 1/ Lấy thông tin vé
+                    var cmdGet = new SqlCommand(@"
+                SELECT FlightNumber, DepartureDate, ArrivalDate, SeatNumber
+                FROM Table_TicketDatabase
+                WHERE TicketID = @TicketID", conn, transaction);
+                    cmdGet.Parameters.AddWithValue("@TicketID", ticketID);
+                    using (var reader = cmdGet.ExecuteReader())
+                    {
+                        if (!reader.Read())
+                            throw new Exception("Không tìm thấy vé.");
+                        string flightNumber = reader.GetString(0);
+                        DateTime departureDate = reader.GetDateTime(1);
+                        DateTime arrivalDate = reader.GetDateTime(2);
+                        string seatNumber = reader.GetString(3);
+                        reader.Close();
+
+                        // 2/ Cập nhật status vé
+                        var cmdUpdTicket = new SqlCommand(@"
+                    UPDATE Table_TicketDatabase
+                    SET Status = 2
+                    WHERE TicketID = @TicketID", conn, transaction);
+                        cmdUpdTicket.Parameters.AddWithValue("@TicketID", ticketID);
+                        cmdUpdTicket.ExecuteNonQuery();
+
+                        // 3/ Cập nhật FlightInfo — giảm count, mở ghế
+                        var sb = new StringBuilder();
+                        sb.AppendLine("UPDATE Table_FlightInfoDatabase");
+                        sb.AppendLine("   SET PassengerCount = PassengerCount - 1");
+                        if (seatNumber.StartsWith("G")
+                            && int.TryParse(seatNumber.Substring(1), out int idx)
+                            && idx >= 1 && idx <= 10)
+                        {
+                            sb.AppendLine($", G{idx} = 0");
+                        }
+                        sb.AppendLine(" WHERE FlightNumber = @FlightNumber");
+                        sb.AppendLine("   AND DepartureDate = @DepartureDate");
+                        sb.AppendLine("   AND ArrivalDate   = @ArrivalDate");
+
+                        var cmdUpdFlight = new SqlCommand(sb.ToString(), conn, transaction);
+                        cmdUpdFlight.Parameters.AddWithValue("@FlightNumber", flightNumber);
+                        cmdUpdFlight.Parameters.AddWithValue("@DepartureDate", departureDate);
+                        cmdUpdFlight.Parameters.AddWithValue("@ArrivalDate", arrivalDate);
+                        cmdUpdFlight.ExecuteNonQuery();
+                    }
+
+                    transaction.Commit();
+                    result = true;
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    throw;  // hoặc trả về false, tuỳ logic của bạn
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            return result;
+        }
+
+        public DataTable GetTicketHistory(string userName, string name = null, string departCode = null, string arriveCode = null,
+                                         string airline = null, string date = null)
+        {
+            try
+            {
+                // Xây dựng câu truy vấn động dựa trên các thông tin có sẵn
+                StringBuilder queryBuilder = new StringBuilder();
+                queryBuilder.Append(@"
+                    SELECT TicketID, FlightNumber, Airline, DepartCode, ArriveCode,
+                           DepartureDate, ArrivalDate, ClassType, SeatNumber, Price,
+                           PhoneNumber, FullName, CCCD, Status
+                    FROM Table_TicketDatabase
+                    WHERE UserName = @UserName");
+
+                var parameters = new List<SqlParameter>
+                {
+                    new SqlParameter("@UserName", userName)
+                };
+
+                // Thêm điều kiện nếu có tên
+                if (!string.IsNullOrEmpty(name))
+                {
+                    queryBuilder.Append(" AND FullName LIKE @FullName");
+                    parameters.Add(new SqlParameter("@FullName", "%" + name + "%"));
+                }
+
+                // Thêm điều kiện nếu có điểm đi
+                if (!string.IsNullOrEmpty(departCode))
+                {
+                    queryBuilder.Append(" AND DepartCode = @DepartCode");
+                    parameters.Add(new SqlParameter("@DepartCode", departCode));
+                }
+
+                // Thêm điều kiện nếu có điểm đến
+                if (!string.IsNullOrEmpty(arriveCode))
+                {
+                    queryBuilder.Append(" AND ArriveCode = @ArriveCode");
+                    parameters.Add(new SqlParameter("@ArriveCode", arriveCode));
+                }
+
+                // Thêm điều kiện nếu có hãng bay
+                if (!string.IsNullOrEmpty(airline))
+                {
+                    queryBuilder.Append(" AND Airline LIKE @Airline");
+                    parameters.Add(new SqlParameter("@Airline", "%" + airline + "%"));
+                }
+
+                // Thêm điều kiện nếu có ngày
+                if (!string.IsNullOrEmpty(date))
+                {
+                    queryBuilder.Append(" AND CONVERT(date, DepartureDate) = @DepartureDate");
+                    parameters.Add(new SqlParameter("@DepartureDate", date));
+                }
+
+                // Thêm sắp xếp theo ngày khởi hành mới nhất
+                queryBuilder.Append(" ORDER BY DepartureDate DESC");
+
+                return ExecuteQuery(queryBuilder.ToString(), parameters);
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Lỗi khi tìm kiếm lịch sử vé: ", ex);
+            }
+        }
+
+        public bool UpdatePassengerInfo(string ticketID, string fullName, string phoneNumber, string cccd)
+        {
+            try
+            {
+                string updateSql = @"
+            UPDATE Table_TicketDatabase
+            SET FullName    = @FullName,
+                PhoneNumber = @PhoneNumber,
+                CCCD        = @CCCD
+            WHERE TicketID = @TicketID";
+
+                var parameters = new List<SqlParameter>
+        {
+            new SqlParameter("@FullName",    fullName),
+            new SqlParameter("@PhoneNumber", phoneNumber),
+            new SqlParameter("@CCCD",        cccd),
+            new SqlParameter("@TicketID",    ticketID)
+        };
+
+                int rows = ExecuteNonQuery(updateSql, parameters);
+                return rows > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Lỗi khi cập nhật thông tin hành khách: ", ex);
             }
         }
     }

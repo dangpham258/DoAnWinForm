@@ -46,9 +46,6 @@ namespace BusinessLogic
             if (getAll)
                 return load.GetAllFlight();
 
-            if (flightID == null && dptDate == null)
-                throw new ArgumentException("Phải cung cấp ít nhất FlightID hoặc DepartureDate");
-
             return load.GetBaseOnFlightIDorDate(flightID, dptDate);
         }
     }

@@ -65,6 +65,13 @@ namespace Presentation
             this.Hide();
         }
 
+        private void btnChangeInfo_Click(object sender, EventArgs e)
+        {
+            TicketInformationChangeForm next = new TicketInformationChangeForm();
+            next.Show();
+            this.Hide();
+        }
+
         private void btnFeedback_Click(object sender, EventArgs e)
         {
             FeedbackForm next = new FeedbackForm();
