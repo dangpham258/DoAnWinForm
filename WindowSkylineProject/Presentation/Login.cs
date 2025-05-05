@@ -27,7 +27,7 @@ namespace Presentation
             passwordFlightCrewTxt.PasswordChar = '\0';
 
             controllerRadioBtn.Checked = true;
-
+            this.AcceptButton = loginAsPassengerBtn;
         }
 
         // đồng nhất màu button và panel tương ứng, loại bỏ viền để tạo sự liên tục
@@ -244,6 +244,13 @@ namespace Presentation
                         break;
                     case "Đăng nhập thành công":
                         MessageBox.Show(verifyStr, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        PersonLoginSession.CurrentPerson = new Person
+                        (
+                            userName: usernameFlightCrewTxt.Text,
+                            password: passwordFlightCrewTxt.Text
+                        );
+
                         this.Hide();
                         mainForm.Show();
                         break;
@@ -269,6 +276,20 @@ namespace Presentation
             else
             {
                 Environment.Exit(0);
+            }
+        }
+
+        private void loginForm_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                // Cập nhật trạng thái vé quá hạn khi form được tải
+                CheckTicketInformation checkTicket = new CheckTicketInformation();
+                checkTicket.UpdateExpiredTickets();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Lỗi cập nhật vé quá hạn: " + ex.Message);
             }
         }
     }

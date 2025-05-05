@@ -48,7 +48,7 @@ namespace Presentation
                     flightId = id;
                 }
 
-                DateTime? date = flightDatePicker.Checked
+                DateTime? date = checkBoxDate.Checked
                     ? flightDatePicker.Value.Date
                     : (DateTime?)null;
 
@@ -87,7 +87,22 @@ namespace Presentation
             }
         }
 
-        private void flightDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            ControllerLoginForm back = new ControllerLoginForm();
+            back.Show();
+            this.Hide();
+        }
+
+        private void txtFlightID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void flightDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Kiểm tra xem người dùng có click vào ô hợp lệ trong hàng không
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -98,7 +113,7 @@ namespace Presentation
 
                 object dateValue = selectedRow.Cells[5].Value;
                 if (dateValue != null && DateTime.TryParse(dateValue.ToString(), out DateTime flightDate))
-                {   
+                {
                     flightDatePicker.Value = flightDate;
                 }
                 else
@@ -108,11 +123,17 @@ namespace Presentation
             }
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void checkBoxDate_CheckedChanged(object sender, EventArgs e)
         {
-            ControllerLoginForm back = new ControllerLoginForm();
-            back.Show();
-            this.Hide();
+            if (checkBoxDate.Checked)
+            {
+                flightDatePicker.Enabled = true;
+            }
+            else
+            {
+                flightDatePicker.Enabled = false;
+                flightDatePicker.Value = DateTime.Today;
+            }
         }
     }
 }

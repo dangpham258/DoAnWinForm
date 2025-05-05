@@ -28,41 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DVGTicket = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.DGVTicket = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DVGTicket)).BeginInit();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVTicket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DVGTicket
-            // 
-            this.DVGTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DVGTicket.Location = new System.Drawing.Point(51, 107);
-            this.DVGTicket.Name = "DVGTicket";
-            this.DVGTicket.RowHeadersWidth = 51;
-            this.DVGTicket.RowTemplate.Height = 24;
-            this.DVGTicket.Size = new System.Drawing.Size(1056, 242);
-            this.DVGTicket.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 50);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 16);
+            this.label1.Size = new System.Drawing.Size(310, 28);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Current Ticket";
+            this.label1.Text = "Các vé của người dùng hiện tại:";
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(51, 391);
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Location = new System.Drawing.Point(13, 675);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(1056, 66);
+            this.btnHuy.Size = new System.Drawing.Size(1157, 66);
             this.btnHuy.TabIndex = 2;
             this.btnHuy.Text = "Hủy vé chuyến bay";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // DGVTicket
+            // 
+            this.DGVTicket.AllowUserToAddRows = false;
+            this.DGVTicket.AllowUserToDeleteRows = false;
+            this.DGVTicket.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVTicket.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DGVTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVTicket.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DGVTicket.Location = new System.Drawing.Point(13, 139);
+            this.DGVTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DGVTicket.Name = "DGVTicket";
+            this.DGVTicket.ReadOnly = true;
+            this.DGVTicket.RowHeadersVisible = false;
+            this.DGVTicket.RowHeadersWidth = 51;
+            this.DGVTicket.RowTemplate.Height = 24;
+            this.DGVTicket.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVTicket.Size = new System.Drawing.Size(1157, 531);
+            this.DGVTicket.TabIndex = 72;
             // 
             // btnBack
             // 
@@ -75,20 +96,33 @@
             this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label4.Location = new System.Drawing.Point(420, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(333, 41);
+            this.label4.TabIndex = 78;
+            this.label4.Text = "HỦY VÉ CHUYẾN BAY";
+            // 
             // TicketCancelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.DGVTicket);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.DVGTicket);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TicketCancelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicketCancelForm";
-            ((System.ComponentModel.ISupportInitialize)(this.DVGTicket)).EndInit();
+            this.Load += new System.EventHandler(this.TicketCancelForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVTicket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -96,10 +130,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView DVGTicket;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.PictureBox btnBack;
+        private System.Windows.Forms.DataGridView DGVTicket;
+        private System.Windows.Forms.Label label4;
     }
 }

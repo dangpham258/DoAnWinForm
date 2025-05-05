@@ -11,6 +11,19 @@ namespace BusinessLogic
 {
     public class CheckTicketInformation
     {
+        public bool UpdateExpiredTickets()
+        {
+            try
+            {
+                CheckTicketInformation_Access ticketAccess = new CheckTicketInformation_Access();
+                return ticketAccess.UpdateExpiredTickets();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi nghiệp vụ khi cập nhật vé quá hạn: " + ex.Message, ex);
+            }
+        }
+
         public bool SaveTicket(Ticket ticket)
         {
             try
@@ -53,6 +66,46 @@ namespace BusinessLogic
             catch (Exception ex)
             {
                 throw new Exception("Lỗi nghiệp vụ khi lấy vé chưa sử dụng: " + ex.Message, ex);
+            }
+        }
+
+        public bool CancelTicket(string ticketID)
+        {
+            try
+            {
+                CheckTicketInformation_Access ticketAccess = new CheckTicketInformation_Access();
+                return ticketAccess.CancelTicket(ticketID);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi nghiệp vụ khi hủy vé: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable GetTicketHistory(string userName, string name = null, string departCode = null, string arriveCode = null,
+                                         string airline = null, string date = null)
+        {
+            try
+            {
+                CheckTicketInformation_Access ticketAccess = new CheckTicketInformation_Access();
+                return ticketAccess.GetTicketHistory(userName, name, departCode, arriveCode, airline, date);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi nghiệp vụ khi tìm kiếm lịch sử vé: " + ex.Message, ex);
+            }
+        }
+
+        public bool UpdatePassengerInfo(string ticketID, string fullName, string phoneNumber, string cccd)
+        {
+            try
+            {
+                var access = new CheckTicketInformation_Access();
+                return access.UpdatePassengerInfo(ticketID, fullName, phoneNumber, cccd);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi nghiệp vụ khi thay đổi thông tin hành khách: " + ex.Message, ex);
             }
         }
     }
