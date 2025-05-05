@@ -86,7 +86,7 @@
             this.flightDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.flightDGV.Size = new System.Drawing.Size(1620, 412);
             this.flightDGV.TabIndex = 11;
-            this.flightDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.flightDGV_CellContentClick);
+            this.flightDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.flightDGV_CellClick);
             // 
             // flightDatePicker
             // 

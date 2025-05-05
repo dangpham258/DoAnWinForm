@@ -82,13 +82,18 @@ namespace Presentation
             }
         }
 
-        private void fullnameTxt_MouseDown(object sender, MouseEventArgs e)
+        private void fullnameTxt_Enter(object sender, EventArgs e)
         {
             fullnameTxt.ForeColor = Color.Black;
             if (fullnameTxt.Text.Equals("Ex: Nguyen Van A"))
             {
                 fullnameTxt.Text = "";
             }
+        }
+
+        private void fullnameTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+            fullnameTxt_Enter(sender, e);
         }
 
         private void fullnameTxt_Leave(object sender, EventArgs e)
@@ -100,13 +105,18 @@ namespace Presentation
             }
         }
 
-        private void usernameTxt_MouseDown(object sender, MouseEventArgs e)
+        private void usernameTxt_Enter(object sender, EventArgs e)
         {
             usernameTxt.ForeColor = Color.Black;
             if (usernameTxt.Text.Equals("Ex: username"))
             {
                 usernameTxt.Text = "";
             }
+        }
+
+        private void usernameTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+            usernameTxt_Enter(sender, e);
         }
 
         private void usernameTxt_Leave(object sender, EventArgs e)
@@ -118,7 +128,7 @@ namespace Presentation
             }
         }
 
-        private void passwordTxt_MouseDown(object sender, MouseEventArgs e)
+        private void passwordTxt_Enter(object sender, EventArgs e)
         {
             passwordTxt.ForeColor = Color.Black;
             if (passwordTxt.Text.Equals("Ex: password"))
@@ -126,6 +136,11 @@ namespace Presentation
                 passwordTxt.Text = "";
                 passwordTxt.PasswordChar = '*';
             }
+        }
+
+        private void passwordTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+            passwordTxt_Enter(sender, e);
         }
 
         private void passwordTxt_Leave(object sender, EventArgs e)
@@ -138,7 +153,7 @@ namespace Presentation
             }
         }
 
-        private void confirmPasswordTxt_MouseDown(object sender, MouseEventArgs e)
+        private void confirmPasswordTxt_Enter(object sender, EventArgs e)
         {
             confirmPasswordTxt.ForeColor = Color.Black;
             if (confirmPasswordTxt.Text.Equals("Ex: password"))
@@ -146,6 +161,11 @@ namespace Presentation
                 confirmPasswordTxt.Text = "";
                 confirmPasswordTxt.PasswordChar = '*';
             }
+        }
+
+        private void confirmPasswordTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+            confirmPasswordTxt_Enter(sender, e);
         }
 
         private void confirmPasswordTxt_Leave(object sender, EventArgs e)
@@ -172,6 +192,6 @@ namespace Presentation
             loginForm next = new loginForm();
             next.Show();
             this.Hide();
-        }
+        } 
     }
 }

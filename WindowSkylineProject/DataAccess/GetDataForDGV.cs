@@ -114,5 +114,36 @@ namespace DataAccess
                 throw new DataAccessException("Lỗi khi lấy dữ liệu chuyến bay theo ID hoặc ngày", ex);
             }
         }
+
+        public DataTable GetFeedback()
+        {
+            try
+            {
+                string sqlStr = "SELECT * FROM Table_FeedbackDatabase";
+                return db.ExecuteQuery(sqlStr);
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Lỗi khi lấy dữ liệu phản hồi", ex);
+            }
+        }
+
+        public DataTable GetFeedbackWithFilter(string type, byte status)
+        {
+            try
+            {
+                string sqlStr = "SELECT * FROM Table_FeedbackDatabase WHERE Type = @Type AND Status = @Status";
+                List<SqlParameter> parameters = new List<SqlParameter>
+                {
+                    new SqlParameter("@Type", type),
+                    new SqlParameter("@Status", status)
+                };
+                return db.ExecuteQuery(sqlStr, parameters);
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Lỗi khi lấy dữ liệu phản hồi với bộ lọc", ex);
+            }
+        }
     }
 }

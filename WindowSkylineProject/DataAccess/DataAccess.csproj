@@ -45,6 +45,7 @@
     <Compile Include="CheckSeat_Access.cs" />
     <Compile Include="CheckTicketInformation_Access.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="FeedbackAccess.cs" />
     <Compile Include="GetDataForDGV.cs" />
     <Compile Include="LoadReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

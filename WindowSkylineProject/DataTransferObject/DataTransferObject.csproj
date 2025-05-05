@@ -48,6 +48,7 @@
     <Compile Include="BookingSession.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="CrewMember.cs" />
+    <Compile Include="Feedback.cs" />
     <Compile Include="FlightInfo.cs" />
     <Compile Include="ILogin.cs" />
     <Compile Include="Passenger.cs" />

@@ -153,8 +153,9 @@
             this.passwordPassengerTxt.PasswordChar = '*';
             this.passwordPassengerTxt.Size = new System.Drawing.Size(400, 31);
             this.passwordPassengerTxt.TabIndex = 11;
+            this.passwordPassengerTxt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.passwordPassengerTxt_MouseClick);
+            this.passwordPassengerTxt.Enter += new System.EventHandler(this.passwordPassengerTxt_Enter);
             this.passwordPassengerTxt.Leave += new System.EventHandler(this.passwordPassengerTxt_Leave);
-            this.passwordPassengerTxt.MouseDown += new System.Windows.Forms.MouseEventHandler(this.passwordPassengerTxt_MouseDown);
             // 
             // usernamePassengerTxt
             // 
@@ -164,8 +165,9 @@
             this.usernamePassengerTxt.Name = "usernamePassengerTxt";
             this.usernamePassengerTxt.Size = new System.Drawing.Size(400, 31);
             this.usernamePassengerTxt.TabIndex = 12;
+            this.usernamePassengerTxt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.usernamePassengerTxt_MouseClick);
+            this.usernamePassengerTxt.Enter += new System.EventHandler(this.usernamePassengerTxt_Enter);
             this.usernamePassengerTxt.Leave += new System.EventHandler(this.usernamePassengerTxt_Leave);
-            this.usernamePassengerTxt.MouseDown += new System.Windows.Forms.MouseEventHandler(this.usernamePassengerTxt_MouseDown);
             // 
             // passwordLabel
             // 
@@ -280,8 +282,9 @@
             this.passwordFlightCrewTxt.PasswordChar = '*';
             this.passwordFlightCrewTxt.Size = new System.Drawing.Size(400, 31);
             this.passwordFlightCrewTxt.TabIndex = 18;
+            this.passwordFlightCrewTxt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.passwordFlightCrewTxt_MouseClick);
+            this.passwordFlightCrewTxt.Enter += new System.EventHandler(this.passwordFlightCrewTxt_Enter);
             this.passwordFlightCrewTxt.Leave += new System.EventHandler(this.passwordFlightCrewTxt_Leave);
-            this.passwordFlightCrewTxt.MouseDown += new System.Windows.Forms.MouseEventHandler(this.passwordFlightCrewTxt_MouseDown);
             // 
             // usernameFlightCrewTxt
             // 
@@ -291,8 +294,9 @@
             this.usernameFlightCrewTxt.Name = "usernameFlightCrewTxt";
             this.usernameFlightCrewTxt.Size = new System.Drawing.Size(400, 31);
             this.usernameFlightCrewTxt.TabIndex = 19;
+            this.usernameFlightCrewTxt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.usernameFlightCrewTxt_MouseClick);
+            this.usernameFlightCrewTxt.Enter += new System.EventHandler(this.usernameFlightCrewTxt_Enter);
             this.usernameFlightCrewTxt.Leave += new System.EventHandler(this.usernameFlightCrewTxt_Leave);
-            this.usernameFlightCrewTxt.MouseDown += new System.Windows.Forms.MouseEventHandler(this.usernameFlightCrewTxt_MouseDown);
             // 
             // passwordFlightCrewLabel
             // 

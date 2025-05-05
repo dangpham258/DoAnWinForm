@@ -50,5 +50,12 @@ namespace Presentation
             next.Show();
             this.Hide();
         }
+
+        private void btnCheckFeedback_Click(object sender, EventArgs e)
+        {
+            CheckFeedbackForm next = new CheckFeedbackForm();
+            next.Show();
+            this.Hide();
+        }
     }
 }

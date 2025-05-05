@@ -64,5 +64,12 @@ namespace Presentation
             next.Show();
             this.Hide();
         }
+
+        private void btnFeedback_Click(object sender, EventArgs e)
+        {
+            FeedbackForm next = new FeedbackForm();
+            next.Show();
+            this.Hide();
+        }
     }
 }

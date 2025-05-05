@@ -87,7 +87,7 @@ namespace Presentation
             }
         }
 
-        private void flightDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void flightDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Kiểm tra xem người dùng có click vào ô hợp lệ trong hàng không
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -98,7 +98,7 @@ namespace Presentation
 
                 object dateValue = selectedRow.Cells[5].Value;
                 if (dateValue != null && DateTime.TryParse(dateValue.ToString(), out DateTime flightDate))
-                {   
+                {
                     flightDatePicker.Value = flightDate;
                 }
                 else
@@ -114,5 +114,7 @@ namespace Presentation
             back.Show();
             this.Hide();
         }
+
+        
     }
 }

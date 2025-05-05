@@ -28,6 +28,17 @@ namespace BusinessLogic
         {
             return load.GetAvailableAttendant();
         }
+        public DataTable ForAllFeedback()
+        {
+            return load.GetFeedback();
+        }
+        public DataTable ForFeedbackWithFilter(string type, bool seen)
+        {
+            if (seen) // Đã xem
+                return load.GetFeedbackWithFilter(type, 1);
+
+            return load.GetFeedbackWithFilter(type, 0);
+        }
 
         // Load vào form ReportFlight: check = 0 -- lấy hết
         public DataTable ForReportFlight(bool getAll, int? flightID = null, DateTime? dptDate = null)

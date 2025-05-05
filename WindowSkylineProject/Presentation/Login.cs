@@ -28,6 +28,9 @@ namespace Presentation
 
             controllerRadioBtn.Checked = true;
 
+            // Enter
+            this.AcceptButton = loginAsPassengerBtn;
+
         }
 
         // đồng nhất màu button và panel tương ứng, loại bỏ viền để tạo sự liên tục
@@ -90,13 +93,18 @@ namespace Presentation
             reg.Show();
         }
 
-        private void usernamePassengerTxt_MouseDown(object sender, MouseEventArgs e)
+        private void usernamePassengerTxt_Enter(object sender, EventArgs e)
         {
             usernamePassengerTxt.ForeColor = Color.Black;
             if (usernamePassengerTxt.Text.Equals("Ex: username"))
             {
                 usernamePassengerTxt.Text = "";
             }
+        }
+
+        private void usernamePassengerTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+            usernamePassengerTxt_Enter(sender, e);
         }
 
         private void usernamePassengerTxt_Leave(object sender, EventArgs e)
@@ -108,7 +116,7 @@ namespace Presentation
             }
         }
 
-        private void passwordPassengerTxt_MouseDown(object sender, MouseEventArgs e)
+        private void passwordPassengerTxt_Enter(object sender, EventArgs e)
         {
             passwordPassengerTxt.ForeColor = Color.Black;
             passwordPassengerTxt.PasswordChar = '*';
@@ -116,6 +124,11 @@ namespace Presentation
             {
                 passwordPassengerTxt.Text = "";
             }
+        }
+
+        private void passwordPassengerTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+            passwordPassengerTxt_Enter(sender, e);
         }
 
         private void passwordPassengerTxt_Leave(object sender, EventArgs e)
@@ -128,13 +141,18 @@ namespace Presentation
             }
         }
 
-        private void usernameFlightCrewTxt_MouseDown(object sender, MouseEventArgs e)
+        private void usernameFlightCrewTxt_Enter(object sender, EventArgs e)
         {
             usernameFlightCrewTxt.ForeColor = Color.Black;
             if (usernameFlightCrewTxt.Text.Equals("Ex: username"))
             {
                 usernameFlightCrewTxt.Text = "";
             }
+        }
+
+        private void usernameFlightCrewTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+            usernamePassengerTxt_Enter(sender, e);
         }
 
         private void usernameFlightCrewTxt_Leave(object sender, EventArgs e)
@@ -146,7 +164,7 @@ namespace Presentation
             }
         }
 
-        private void passwordFlightCrewTxt_MouseDown(object sender, MouseEventArgs e)
+        private void passwordFlightCrewTxt_Enter(object sender, EventArgs e)
         {
             passwordFlightCrewTxt.ForeColor = Color.Black;
             if (passwordFlightCrewTxt.Text.Equals("Ex: password"))
@@ -154,6 +172,11 @@ namespace Presentation
                 passwordFlightCrewTxt.Text = "";
                 passwordFlightCrewTxt.PasswordChar = '*';
             }
+        }
+
+        private void passwordFlightCrewTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+            passwordFlightCrewTxt_Enter(sender, e);
         }
 
         private void passwordFlightCrewTxt_Leave(object sender, EventArgs e)

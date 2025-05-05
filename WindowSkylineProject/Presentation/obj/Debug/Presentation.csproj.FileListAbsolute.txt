@@ -214,3 +214,5 @@ D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\Presentation\obj\De
 D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.pdb
 D:\WindowSkylineProjectGit3\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.SeatChangeForm.resources
 D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.SeatChangeForm.resources
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.FeedbackForm.resources
+D:\DaiHoc\LT Win\DoAnCuoiKy\DoAnWinForm\WindowSkylineProject\Presentation\obj\Debug\Presentation.CheckFeedbackForm.resources

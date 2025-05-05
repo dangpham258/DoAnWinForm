@@ -30,8 +30,9 @@
         {
             this.btnXepLich = new System.Windows.Forms.Button();
             this.btnBaoCao = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.PictureBox();
+            this.btnCheckFeedback = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,18 +58,6 @@
             this.btnBaoCao.UseVisualStyleBackColor = true;
             this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             // 
-            // btnBack
-            // 
-            this.btnBack.Image = global::Presentation.Properties.Resources.back;
-            this.btnBack.Location = new System.Drawing.Point(1310, 14);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(44, 58);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnBack.TabIndex = 72;
-            this.btnBack.TabStop = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
@@ -84,11 +73,35 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Image = global::Presentation.Properties.Resources.back;
+            this.btnBack.Location = new System.Drawing.Point(1310, 14);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(44, 58);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 72;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnCheckFeedback
+            // 
+            this.btnCheckFeedback.Location = new System.Drawing.Point(104, 667);
+            this.btnCheckFeedback.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCheckFeedback.Name = "btnCheckFeedback";
+            this.btnCheckFeedback.Size = new System.Drawing.Size(252, 98);
+            this.btnCheckFeedback.TabIndex = 74;
+            this.btnCheckFeedback.Text = "Xem phản hồi khách hàng";
+            this.btnCheckFeedback.UseVisualStyleBackColor = true;
+            this.btnCheckFeedback.Click += new System.EventHandler(this.btnCheckFeedback_Click);
+            // 
             // ControllerLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1773, 1177);
+            this.Controls.Add(this.btnCheckFeedback);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnBaoCao);
@@ -108,5 +121,6 @@
         private System.Windows.Forms.Button btnBaoCao;
         private System.Windows.Forms.PictureBox btnBack;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnCheckFeedback;
     }
 }

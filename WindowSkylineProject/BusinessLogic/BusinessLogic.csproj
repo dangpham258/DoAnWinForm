@@ -41,13 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	  <Compile Include="AddCrewMember.cs" />
-	  <Compile Include="CheckForLoadToDGV.cs" />
-	  <Compile Include="ReportManage.cs" />
-	  <Compile Include="CheckBookingInformationForm.cs" />
-	  <Compile Include="CheckLogin_Register.cs" />
-	  <Compile Include="CheckSeat.cs" />
-	  <Compile Include="CheckTicketInformation.cs" />
+    <Compile Include="AddCrewMember.cs" />
+    <Compile Include="CheckForLoadToDGV.cs" />
+    <Compile Include="FeedbackManage.cs" />
+    <Compile Include="ReportManage.cs" />
+    <Compile Include="CheckBookingInformationForm.cs" />
+    <Compile Include="CheckLogin_Register.cs" />
+    <Compile Include="CheckSeat.cs" />
+    <Compile Include="CheckTicketInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

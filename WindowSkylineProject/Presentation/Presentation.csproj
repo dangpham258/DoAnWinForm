@@ -82,6 +82,12 @@
     <Compile Include="BookingInformationForm.Designer.cs">
       <DependentUpon>BookingInformationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckFeedbackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckFeedbackForm.Designer.cs">
+      <DependentUpon>CheckFeedbackForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControllerFlightChooseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,12 @@
     </Compile>
     <Compile Include="CrewLoginForm.Designer.cs">
       <DependentUpon>CrewLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeedbackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeedbackForm.Designer.cs">
+      <DependentUpon>FeedbackForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PassengerLoginForm.cs">
       <SubType>Form</SubType>
@@ -185,6 +197,9 @@
     <EmbeddedResource Include="BookingInformationForm.resx">
       <DependentUpon>BookingInformationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CheckFeedbackForm.resx">
+      <DependentUpon>CheckFeedbackForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControllerFlightChooseForm.resx">
       <DependentUpon>ControllerFlightChooseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrewLoginForm.resx">
       <DependentUpon>CrewLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeedbackForm.resx">
+      <DependentUpon>FeedbackForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FlightReport.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
