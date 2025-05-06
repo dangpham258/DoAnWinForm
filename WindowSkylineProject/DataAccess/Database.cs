@@ -25,7 +25,7 @@ namespace DataAccess
 
         public Database()
         {
-            string strCnn = @"Data Source=LAPTOP-CPJ5IEEE;Database=Skyline;Persist Security Info=True;User ID=sa;Password=PTTDang@2005;MultipleActiveResultSets=True;";
+            string strCnn = @"Data Source=WIN;Database=Skyline;Persist Security Info=True;User ID=sa;Password=thiendang;MultipleActiveResultSets=True;";
             sqlConn = new SqlConnection(strCnn);
         }
 
@@ -56,7 +56,6 @@ namespace DataAccess
             }
         }
 
-        // Thực hiện các lệnh INSERT, UPDATE, DELETE
         public int ExecuteNonQuery(string sqlStr, List<SqlParameter> parameters = null)
         {
             try
@@ -72,12 +71,10 @@ namespace DataAccess
             }
             catch (SqlException sqlEx)
             {
-                // TODO: Ghi log lỗi tại đây
                 throw new DataAccessException("Lỗi khi thực hiện thao tác cập nhật dữ liệu", sqlEx);
             }
             catch (Exception ex)
             {
-                // TODO: Ghi log lỗi tại đây
                 throw new DataAccessException("Lỗi không xác định khi thực hiện thao tác cập nhật dữ liệu", ex);
             }
             finally
@@ -103,75 +100,16 @@ namespace DataAccess
             }
             catch (SqlException sqlEx)
             {
-                // TODO: Ghi log lỗi tại đây
                 throw new DataAccessException("Lỗi khi lấy giá trị đơn", sqlEx);
             }
             catch (Exception ex)
             {
-                // TODO: Ghi log lỗi tại đây
                 throw new DataAccessException("Lỗi không xác định khi lấy giá trị đơn", ex);
             }
             finally
             {
                 if (sqlConn.State == ConnectionState.Open)
                     sqlConn.Close();
-            }
-        }
-
-        // Hàm INSERT
-        public int Insert(string tableName, Dictionary<string, object> data)
-        {
-            try
-            {
-                var columns = string.Join(", ", data.Keys);
-                var paramNames = string.Join(", ", data.Keys.Select(k => "@" + k));
-                string sqlStr = $"INSERT INTO {tableName} ({columns}) VALUES ({paramNames})";
-
-                var parameters = data.Select(kvp =>
-                    new SqlParameter("@" + kvp.Key, kvp.Value ?? DBNull.Value)).ToList();
-
-                return ExecuteNonQuery(sqlStr, parameters);
-            }
-            catch (Exception ex)
-            {
-                // Nếu ExecuteNonQuery ném DataAccessException thì vào catch này
-                throw;
-            }
-        }
-
-        // Hàm UPDATE
-        public int Update(string tableName, Dictionary<string, object> data, string whereClause, List<SqlParameter> whereParams = null)
-        {
-            try
-            {
-                var setClause = string.Join(", ", data.Keys.Select(k => $"{k} = @{k}"));
-                string sqlStr = $"UPDATE {tableName} SET {setClause} WHERE {whereClause}";
-
-                var parameters = data.Select(kvp =>
-                    new SqlParameter("@" + kvp.Key, kvp.Value ?? DBNull.Value)).ToList();
-
-                if (whereParams != null)
-                    parameters.AddRange(whereParams);
-
-                return ExecuteNonQuery(sqlStr, parameters);
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
-        // Hàm DELETE
-        public int Delete(string tableName, string whereClause, List<SqlParameter> whereParams = null)
-        {
-            try
-            {
-                string sqlStr = $"DELETE FROM {tableName} WHERE {whereClause}";
-                return ExecuteNonQuery(sqlStr, whereParams);
-            }
-            catch
-            {
-                throw;
             }
         }
     }

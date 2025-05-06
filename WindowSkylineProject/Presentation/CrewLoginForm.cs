@@ -46,7 +46,6 @@ namespace Presentation
         {
             try
             {
-                // Đặt biến cờ để không hiển thị hộp thoại trong quá trình khởi tạo
                 isInitializing = true;
 
                 string currentUser = PersonLoginSession.CurrentPerson.UserName;
@@ -63,6 +62,19 @@ namespace Presentation
                     PersonLoginSession.CurrentPerson.PersonID = Convert.ToInt32(row["PersonID"]);
                     lblName.Text = row["FullName"].ToString();
                     lblJob.Text = row["JobType"].ToString();
+
+                    CrewMemberLogic crewMemberLogic = new CrewMemberLogic();
+                    if (crewMemberLogic.IsBusyInFuture(PersonLoginSession.CurrentPerson.PersonID))
+                    {
+                        groupBox1.Enabled = false;
+                        lblNotification.Visible = true;
+                        lblNotification.Text = "Bạn có ít nhất một chuyến bay trong tương lai tới, không thể thay đổi trạng thái.";
+                    }
+                    else
+                    {
+                        groupBox1.Enabled = true;
+                        lblNotification.Visible = false;
+                    }
 
                     // Cập nhật trạng thái cho RadioButton
                     int status = Convert.ToInt32(row["Status"]);
@@ -85,7 +97,6 @@ namespace Presentation
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                // Sau khi khởi tạo xong, tắt biến cờ
                 isInitializing = false;
             }
             catch (Exception ex)
@@ -100,10 +111,8 @@ namespace Presentation
         {
             try
             {
-                // Chỉ hiển thị xác nhận khi không phải trong quá trình khởi tạo
                 if (radioButtonFree.Checked && !isInitializing)
                 {
-                    // Hiển thị thông báo xác nhận trước khi thay đổi trạng thái
                     var result = MessageBox.Show(
                         "Bạn có muốn đổi trạng thái thành 'Rảnh rỗi' không?",
                         "Xác nhận thay đổi trạng thái",
@@ -119,7 +128,6 @@ namespace Presentation
                     }
                     else
                     {
-                        // Tạm thời đặt isInitializing để tránh vòng lặp vô hạn
                         isInitializing = true;
                         radioButtonFree.Checked = false;
                         radioButtonBusy.Checked = true;
@@ -138,10 +146,8 @@ namespace Presentation
         {
             try
             {
-                // Chỉ hiển thị xác nhận khi không phải trong quá trình khởi tạo
                 if (radioButtonBusy.Checked && !isInitializing)
                 {
-                    // Hiển thị thông báo xác nhận trước khi thay đổi trạng thái
                     var result = MessageBox.Show(
                         "Bạn có muốn đổi trạng thái thành 'Bận' không?",
                         "Xác nhận thay đổi trạng thái",
@@ -157,7 +163,6 @@ namespace Presentation
                     }
                     else
                     {
-                        // Tạm thời đặt isInitializing để tránh vòng lặp vô hạn
                         isInitializing = true;
                         radioButtonBusy.Checked = false;
                         radioButtonFree.Checked = true;

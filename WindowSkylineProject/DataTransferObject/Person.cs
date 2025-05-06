@@ -28,7 +28,6 @@ namespace DataTransferObject
             this.password = password;
         }
 
-        // Properties (getters và setters) 
         public int PersonID
         {
             get { return personId; }             // Lấy ID của người dùng

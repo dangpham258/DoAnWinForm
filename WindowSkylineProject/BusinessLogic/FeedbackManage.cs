@@ -37,6 +37,10 @@ namespace BusinessLogic
             {
                 return "Nội dung phản hồi không được quá 255 ký tự";
             }
+            if (string.IsNullOrWhiteSpace(fb.Detail) || fb.Detail == "Ngắn gọn, không quá 255 kí tự")
+            {
+                return "Vui lòng nhập nội dung phản hồi";
+            }
 
             try
             {

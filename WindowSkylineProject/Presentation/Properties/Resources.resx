@@ -118,34 +118,97 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="windowairline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\windowairline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="memberDetailIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\memberDetailIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconDiemDi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconDiemDi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chongoi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chongoi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconDiemDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconDiemDen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="swap2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\swap2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SoDoGheNgoi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SoDoGheNgoi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="vemaybay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vemaybay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MayBayBay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MayBayBay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="maybayIMG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maybayIMG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quanLy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quanLy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BanDoSanBay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BanDoSanBay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="nguoiquanly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nguoiquanly.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="khaosat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\khaosat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vietjack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vietjack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="flyicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flyicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconFeedBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconFeedBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vietnameairline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vietnameairline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="anhmaybay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\anhmaybay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bamboo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bamboo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconHuy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconHuy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconlogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconlogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vemaybayicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vemaybayicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SeatChange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SeatChange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chongoi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chongoi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconDiemDi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconDiemDi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="app" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\app.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="windowairline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\windowairline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SoDoGheNgoi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SoDoGheNgoi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="khaosat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\khaosat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconDiemDen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconDiemDen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="app2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\app2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngtree-feedback-icon-graphic-design-template-vector-illustration-png-image_1497727" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-feedback-icon-graphic-design-template-vector-illustration-png-image_1497727.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="swap2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\swap2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="9977134" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9977134.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="baocao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\baocao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

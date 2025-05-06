@@ -35,12 +35,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.flightIDLb = new System.Windows.Forms.Label();
             this.txtFlightID = new System.Windows.Forms.TextBox();
-            this.btnBack = new System.Windows.Forms.PictureBox();
             this.flightDGV = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.checkBoxDate = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.flightDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -59,7 +63,7 @@
             this.btnMakeReport.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMakeReport.Location = new System.Drawing.Point(13, 688);
             this.btnMakeReport.Name = "btnMakeReport";
-            this.btnMakeReport.Size = new System.Drawing.Size(1357, 53);
+            this.btnMakeReport.Size = new System.Drawing.Size(1557, 53);
             this.btnMakeReport.TabIndex = 12;
             this.btnMakeReport.Text = "Tạo báo cáo chuyến bay";
             this.btnMakeReport.UseVisualStyleBackColor = true;
@@ -105,17 +109,6 @@
             this.txtFlightID.TabIndex = 15;
             this.txtFlightID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFlightID_KeyPress);
             // 
-            // btnBack
-            // 
-            this.btnBack.Image = global::Presentation.Properties.Resources.back;
-            this.btnBack.Location = new System.Drawing.Point(1341, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(29, 37);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnBack.TabIndex = 71;
-            this.btnBack.TabStop = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // flightDGV
             // 
             this.flightDGV.AllowUserToAddRows = false;
@@ -139,7 +132,7 @@
             this.flightDGV.RowHeadersWidth = 51;
             this.flightDGV.RowTemplate.Height = 24;
             this.flightDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.flightDGV.Size = new System.Drawing.Size(1357, 439);
+            this.flightDGV.Size = new System.Drawing.Size(1677, 439);
             this.flightDGV.TabIndex = 72;
             this.flightDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.flightDGV_CellClick);
             // 
@@ -148,7 +141,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label4.Location = new System.Drawing.Point(589, 12);
+            this.label4.Location = new System.Drawing.Point(191, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(231, 41);
             this.label4.TabIndex = 77;
@@ -165,12 +158,45 @@
             this.checkBoxDate.UseVisualStyleBackColor = true;
             this.checkBoxDate.CheckedChanged += new System.EventHandler(this.checkBoxDate_CheckedChanged);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Presentation.Properties.Resources.baocao;
+            this.pictureBox2.Location = new System.Drawing.Point(606, 34);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(167, 196);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 80;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentation.Properties.Resources.anhmaybay;
+            this.pictureBox1.Location = new System.Drawing.Point(779, 55);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(911, 175);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Image = global::Presentation.Properties.Resources.back;
+            this.btnBack.Location = new System.Drawing.Point(1661, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(29, 37);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 71;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // ReportFlightChooseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.ClientSize = new System.Drawing.Size(1702, 753);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBoxDate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.flightDGV);
@@ -186,8 +212,11 @@
             this.Name = "ReportFlightChooseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportFlightChooseForm";
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
+            this.Load += new System.EventHandler(this.ReportFlightChooseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.flightDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +234,7 @@
         private System.Windows.Forms.DataGridView flightDGV;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox checkBoxDate;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

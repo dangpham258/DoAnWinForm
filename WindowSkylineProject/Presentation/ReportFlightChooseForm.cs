@@ -136,6 +136,33 @@ namespace Presentation
             }
         }
 
-        
+        private void ReportFlightChooseForm_Load(object sender, EventArgs e)
+        {
+            FormatDataGridView();
+        }
+
+        private void FormatDataGridView()
+        {
+            flightDGV.ClearSelection();
+            flightDGV.Columns["FlightID"].HeaderText = "Mã chuyến bay";
+            flightDGV.Columns["FlightNumber"].HeaderText = "Số hiệu";
+            flightDGV.Columns["Airline"].HeaderText = "Hãng bay";
+            flightDGV.Columns["DepartCode"].HeaderText = "Sân bay đi";
+            flightDGV.Columns["ArriveCode"].HeaderText = "Sân bay đến";
+            flightDGV.Columns["DepartureDate"].HeaderText = "Ngày khởi hành";
+            flightDGV.Columns["ArrivalDate"].HeaderText = "Ngày đến";
+            flightDGV.Columns["PilotName"].HeaderText = "Phi công";
+            flightDGV.Columns["CoPilotName"].HeaderText = "Cơ phó";
+            flightDGV.Columns["PassengerCount"].HeaderText = "Số hành khách";
+            flightDGV.Columns["AttendantName"].HeaderText = "Tiếp viên";
+
+            flightDGV.Columns["PilotID"].Visible = false;
+            flightDGV.Columns["CoPilotID"].Visible = false;
+            flightDGV.Columns["AttendantID"].Visible = false;
+
+            flightDGV.Columns["DepartureDate"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
+            flightDGV.Columns["ArrivalDate"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
+            flightDGV.AutoResizeColumns();
+        }
     }
 }

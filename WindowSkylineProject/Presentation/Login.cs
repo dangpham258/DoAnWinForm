@@ -19,7 +19,6 @@ namespace Presentation
             InitializeComponent();
             scheduleFlightPanel.Visible = false;
             bookingPanel.Visible = true;
-            bookingPanel.BackColor = Color.White;
             usernamePassengerTxt.Text = "Ex: username";
             passwordPassengerTxt.Text = "Ex: password";
 
@@ -31,21 +30,14 @@ namespace Presentation
 
         }
 
-        // đồng nhất màu button và panel tương ứng, loại bỏ viền để tạo sự liên tục
         private void ChangeActivePanel(Button activeButton, Panel activePanel)
         {
             // Reset màu của tất cả button và panel
             scheduleBtn.BackColor = Color.LightGray;
             bookingBtn.BackColor = Color.LightGray;
-            scheduleFlightPanel.BackColor = Color.LightGray;
-            bookingPanel.BackColor = Color.LightGray;
             
             passwordPassengerTxt.PasswordChar = '\0';
             passwordFlightCrewTxt.PasswordChar = '\0';
-
-            // Đặt màu cho button và panel được chọn
-            activeButton.BackColor = Color.White;
-            activePanel.BackColor = Color.White;
 
             // Xử lý Enter
             if (activePanel == bookingPanel)
@@ -53,17 +45,21 @@ namespace Presentation
             else
                 this.AcceptButton = loginAsFlightCrewBtn;
 
-            // Loại bỏ viền nổi (FlatStyle)
             scheduleBtn.FlatStyle = FlatStyle.Flat;
             scheduleBtn.FlatAppearance.BorderSize = 0;
             bookingBtn.FlatStyle = FlatStyle.Flat;
             bookingBtn.FlatAppearance.BorderSize = 0;
+
+            scheduleFlightPanel.Visible = false;
+            bookingPanel.Visible = false;
+
+            activePanel.Visible = true;
+            activePanel.BringToFront();
+            activeButton.BackColor = Color.White;
         }
 
         private void bookingBtn_Click(object sender, EventArgs e)
         {
-            bookingPanel.Visible = true;
-            scheduleFlightPanel.Visible = false;
             ChangeActivePanel(bookingBtn, bookingPanel);
 
             usernamePassengerTxt.ForeColor = Color.Gray;
@@ -74,8 +70,6 @@ namespace Presentation
 
         private void scheduleBtn_Click(object sender, EventArgs e)
         {
-            scheduleFlightPanel.Visible = true;
-            bookingPanel.Visible = false;
             ChangeActivePanel(scheduleBtn, scheduleFlightPanel);
 
             usernameFlightCrewTxt.ForeColor = Color.Gray;
@@ -311,6 +305,38 @@ namespace Presentation
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Lỗi cập nhật vé quá hạn: " + ex.Message);
+            }
+        }
+
+        private void usernameFlightCrewTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void passwordFlightCrewTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void usernamePassengerTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void passwordPassengerTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
             }
         }
     }

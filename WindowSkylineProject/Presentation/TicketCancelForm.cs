@@ -46,7 +46,7 @@ namespace Presentation
         {
             if (DGVTicket.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn một vé để hủy.", "Thông báo",
+                MessageBox.Show("Vui lòng chọn một vé để hủy", "Thông báo",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -60,7 +60,6 @@ namespace Presentation
             {
                 string ticketID = DGVTicket.SelectedRows[0].Cells["TicketID"].Value.ToString();
 
-                // Sử dụng BusinessLogic thay vì truy cập trực tiếp đến database
                 CheckTicketInformation ticketBL = new CheckTicketInformation();
                 bool success = ticketBL.CancelTicket(ticketID);
 
@@ -69,14 +68,13 @@ namespace Presentation
                     MessageBox.Show("Hủy vé thành công!", "Thành công",
                                   MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Cập nhật lại datagridview sau khi hủy vé
                     string currentUser = PersonLoginSession.CurrentPerson.UserName;
                     DataTable dtCurrentTickets = ticketBL.GetCurrentNotUseTicket(currentUser);
                     DGVTicket.DataSource = dtCurrentTickets;
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy vé để hủy.", "Thông báo",
+                    MessageBox.Show("Không tìm thấy vé để hủy", "Thông báo",
                                   MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }

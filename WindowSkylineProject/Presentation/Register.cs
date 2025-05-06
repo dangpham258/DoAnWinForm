@@ -178,20 +178,45 @@ namespace Presentation
             }
         }
 
-        private void registerForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            var result = MessageBox.Show("Bạn có muốn thoát ứng dụng?", "Thoát ứng dụng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             loginForm next = new loginForm();
             next.Show();
             this.Hide();
-        } 
+        }
+
+        private void fullnameTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar)
+                && !char.IsControl(e.KeyChar)
+                && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void usernameTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void passwordTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void confirmPasswordTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

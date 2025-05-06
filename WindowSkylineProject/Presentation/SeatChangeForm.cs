@@ -30,7 +30,6 @@ namespace Presentation
         {
             try
             {
-                // Kiểm tra xem người dùng đã chọn vé chưa
                 if (DGVCurrentTicket.SelectedRows.Count == 0 && DGVCurrentTicket.SelectedCells.Count == 0)
                 {
                     MessageBox.Show("Vui lòng chọn vé cần đổi ghế!", "Thông báo",
@@ -48,7 +47,6 @@ namespace Presentation
                 DateTime arrivalDate = Convert.ToDateTime(selectedRow.Cells["ArrivalDate"].Value);
                 string currentSeat = selectedRow.Cells["SeatNumber"].Value.ToString();
 
-                // Tìm ghế mới được chọn
                 string newSeatNumber = "";
                 foreach (Control control in groupBox1.Controls)
                 {
@@ -60,7 +58,6 @@ namespace Presentation
                     }
                 }
 
-                // Kiểm tra xem đã chọn ghế mới chưa
                 if (string.IsNullOrEmpty(newSeatNumber))
                 {
                     MessageBox.Show("Vui lòng chọn ghế muốn đổi!", "Thông báo",
@@ -75,7 +72,6 @@ namespace Presentation
 
                 if (result == DialogResult.Yes)
                 {
-                    // Gọi phương thức đổi ghế từ Business Logic
                     CheckSeat seatBL = new CheckSeat();
                     bool success = seatBL.ChangeSeat(ticketID, newSeatNumber, flightNumber, departureDate, arrivalDate);
 
@@ -84,7 +80,6 @@ namespace Presentation
                         MessageBox.Show($"Đổi ghế thành công từ {currentSeat} sang {newSeatNumber}!",
                                        "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Cập nhật lại danh sách vé hiện tại
                         SeatChangeForm_Load(sender, e);
                     }
                     else
@@ -112,8 +107,6 @@ namespace Presentation
                 // Lấy danh sách vé chưa sử dụng
                 CheckTicketInformation ticketBL = new CheckTicketInformation();
                 DataTable dtCurrentTickets = ticketBL.GetCurrentNotUseTicket(currentUser);
-
-                // Hiển thị lên DataGridView
                 DGVCurrentTicket.DataSource = dtCurrentTickets;
 
                 if (DGVCurrentTicket.Columns.Count > 0)
@@ -159,18 +152,13 @@ namespace Presentation
             {
                 groupBox1.Visible = true;
                 lblShowGhe.Visible = true;
-                // Lấy thông tin vé từ dòng được chọn trong DataGridView
                 DataGridViewRow selectedRow = DGVCurrentTicket.Rows[e.RowIndex];
-
-                // Lấy các giá trị cần thiết từ dòng đã chọn
                 string flightNumber = selectedRow.Cells["FlightNumber"].Value.ToString();
                 DateTime departureDate = Convert.ToDateTime(selectedRow.Cells["DepartureDate"].Value);
                 DateTime arrivalDate = Convert.ToDateTime(selectedRow.Cells["ArrivalDate"].Value);
 
-                // Khởi tạo đối tượng kiểm tra trạng thái ghế
                 CheckSeat seatBUS = new CheckSeat();
 
-                // Lấy trạng thái ghế cho chuyến bay đã chọn
                 Dictionary<string, bool> seatStatus = seatBUS.GetSeatStatus(
                     flightNumber,
                     departureDate,
@@ -182,11 +170,8 @@ namespace Presentation
                 {
                     if (control is RadioButton rb)
                     {
-                        // Reset trạng thái của tất cả RadioButton trước khi cập nhật
                         rb.Enabled = true;
                         rb.ForeColor = SystemColors.ControlText;
-
-                        // Chuyển đổi tên RadioButton thành mã ghế (ví dụ: "radioButton1" => "G1")
                         string seatName = "G" + rb.Name.Substring(11).PadLeft(1, '0');
 
                         // Vô hiệu hóa RadioButton cho ghế đã được đặt

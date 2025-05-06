@@ -21,7 +21,6 @@ namespace Presentation
 
         private void BookingConfirmForm_Load(object sender, EventArgs e)
         {
-            // Hiển thị tất cả thông tin lên các label
             if (BookingSession.CurrentTicket != null)
             {
                 lblHoTen.Text = $"Ông/Bà: {BookingSession.CurrentTicket.FullName}";

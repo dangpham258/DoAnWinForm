@@ -10,11 +10,11 @@ namespace BusinessLogic
 {
     public class CrewMemberLogic
     {
+        CheckCrewMember crewAccess = new CheckCrewMember();
         public DataTable GetCrewMemberInfo(string userName)
         {
             try
             {
-                CheckCrewMember crewAccess = new CheckCrewMember();
                 return crewAccess.GetCrewMemberInfo(userName);
             }
             catch (Exception ex)
@@ -27,7 +27,6 @@ namespace BusinessLogic
         {
             try
             {
-                CheckCrewMember crewAccess = new CheckCrewMember();
                 return crewAccess.UpdateCrewMemberStatus(userName, status);
             }
             catch (Exception ex)
@@ -40,13 +39,16 @@ namespace BusinessLogic
         {
             try
             {
-                CheckCrewMember crewAccess = new CheckCrewMember();
                 return crewAccess.GetCurrentFlightInfo(crewID);
             }
             catch (Exception ex)
             {
                 throw new Exception("Lỗi nghiệp vụ khi lấy thông tin chuyến bay: " + ex.Message, ex);
             }
+        }
+        public bool IsBusyInFuture(int id)
+        {
+            return crewAccess.HasFlightsInFuture(id);
         }
     }
 }

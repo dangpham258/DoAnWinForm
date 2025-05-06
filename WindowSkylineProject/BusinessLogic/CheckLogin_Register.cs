@@ -123,7 +123,6 @@ namespace BusinessLogic
                 {
                     return "Người dùng đã tồn tại";
                 }
-                // Thêm logic để lưu thông tin người dùng mới vào cơ sở dữ liệu
                 CheckLogin_RegisterAccess checkPassengerRegisterAccess = new CheckLogin_RegisterAccess();
                 checkPassengerRegisterAccess.Register(passenger);
                 return "Đăng ký thành công";

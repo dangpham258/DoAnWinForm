@@ -31,9 +31,7 @@ namespace Presentation
             try
             {
                 int currentID = PersonLoginSession.CurrentPerson.PersonID;
-                // Gán dữ liệu vào DataGridView
                 DGVFlightInFuture.DataSource = new CrewMemberLogic().GetCurrentFlightInfo(currentID);
-                // Định dạng hiển thị cho DataGridView
                 FormatDataGridView();
             }
             catch (Exception ex)
@@ -47,7 +45,6 @@ namespace Presentation
         {
             DGVFlightInFuture.ClearSelection();
 
-            // Đổi tên các cột hiển thị
             DGVFlightInFuture.Columns["FlightID"].Visible = false;
             DGVFlightInFuture.Columns["FlightNumber"].HeaderText = "Mã chuyến bay";
             DGVFlightInFuture.Columns["Airline"].HeaderText = "Hãng bay";
@@ -63,7 +60,6 @@ namespace Presentation
             DGVFlightInFuture.Columns["AttendantName"].HeaderText = "Tên tiếp viên";
             DGVFlightInFuture.Columns["PassengerCount"].HeaderText = "Số lượng hành khách";
 
-            // Ẩn các cột ghế G1 đến G10
             for (int i = 1; i <= 10; i++)
             {
                 string columnName = "G" + i;
@@ -73,11 +69,8 @@ namespace Presentation
                 }
             }
 
-            // Định dạng ngày giờ cho các cột thời gian
             DGVFlightInFuture.Columns["DepartureDate"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
             DGVFlightInFuture.Columns["ArrivalDate"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
-
-            // Tự động điều chỉnh kích thước các cột
             DGVFlightInFuture.AutoResizeColumns();
         }
     }

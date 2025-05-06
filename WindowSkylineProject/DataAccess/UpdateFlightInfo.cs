@@ -22,20 +22,22 @@ namespace DataAccess
             try
             {
                 string sqlStr = "UPDATE Table_FlightInfoDatabase SET " +
-                        "PilotID = @PilotID, PilotName = @PilotName, CoPilotID = @CoPilotID, CoPilotName = @CoPilotName, " +
-                        "AttendantID = @AttendantID, AttendantName = @AttendantName " +
-                        "WHERE FlightID = @FlightID";
+                                "PilotID = @PilotID, PilotName = @PilotName, " +
+                                "CoPilotID = @CoPilotID, CoPilotName = @CoPilotName, " +
+                                "AttendantID = @AttendantID, AttendantName = @AttendantName " +
+                                "WHERE FlightID = @FlightID";
 
                 List<SqlParameter> parameters = new List<SqlParameter>
                 {
-                new SqlParameter("@PilotID", flight.PilotID),
-                new SqlParameter("@PilotName", flight.PilotName),
-                new SqlParameter("@CoPilotID", flight.CoPilotID),
-                new SqlParameter("@CoPilotName", flight.CoPilotName),
-                new SqlParameter("@AttendantID", flight.AttendantID),
-                new SqlParameter("@AttendantName", flight.AttendantName),
-                new SqlParameter("@FlightID", flight.FlightID)
+                    new SqlParameter("@PilotID", flight.PilotID.HasValue ? (object)flight.PilotID : DBNull.Value),
+                    new SqlParameter("@PilotName", flight.PilotName ?? (object)DBNull.Value),
+                    new SqlParameter("@CoPilotID", flight.CoPilotID.HasValue ? (object)flight.CoPilotID : DBNull.Value),
+                    new SqlParameter("@CoPilotName", flight.CoPilotName ?? (object)DBNull.Value),
+                    new SqlParameter("@AttendantID", flight.AttendantID.HasValue ? (object)flight.AttendantID : DBNull.Value),
+                    new SqlParameter("@AttendantName", flight.AttendantName ?? (object)DBNull.Value),
+                    new SqlParameter("@FlightID", flight.FlightID)
                 };
+
                 return db.ExecuteNonQuery(sqlStr, parameters) > 0;
             }
             catch (Exception ex)
@@ -48,14 +50,32 @@ namespace DataAccess
         {
             try
             {
-                string sqlStr = "UPDATE Table_CrewDatabase SET Status = 0 " +
-                    "WHERE PersonID IN (@PilotID, @CoPilotID, @AttendantID)";
-                List<SqlParameter> parameters = new List<SqlParameter>
+                List<SqlParameter> parameters = new List<SqlParameter>();
+                List<string> personIDs = new List<string>();
+
+                if (flight.PilotID.HasValue)
                 {
-                new SqlParameter("@PilotID", flight.PilotID),
-                new SqlParameter("@CoPilotID", flight.CoPilotID),
-                new SqlParameter("@AttendantID", flight.AttendantID)
-                };
+                    parameters.Add(new SqlParameter("@PilotID", flight.PilotID.Value));
+                    personIDs.Add("@PilotID");
+                }
+                if (flight.CoPilotID.HasValue)
+                {
+                    parameters.Add(new SqlParameter("@CoPilotID", flight.CoPilotID.Value));
+                    personIDs.Add("@CoPilotID");
+                }
+                if (flight.AttendantID.HasValue)
+                {
+                    parameters.Add(new SqlParameter("@AttendantID", flight.AttendantID.Value));
+                    personIDs.Add("@AttendantID");
+                }
+                if (personIDs.Count == 0)
+                {
+                    return true;
+                }
+
+                string sqlStr = "UPDATE Table_CrewDatabase SET Status = 0 WHERE PersonID IN (" +
+                                string.Join(", ", personIDs) + ")";
+
                 return db.ExecuteNonQuery(sqlStr, parameters) > 0;
             }
             catch (Exception ex)

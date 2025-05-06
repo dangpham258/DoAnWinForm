@@ -112,8 +112,6 @@ namespace Presentation
                     return;
                 }
 
-                
-
                 // Lấy dòng chuyến bay (để kiểm tra trạng thái xếp lịch)
                 var flightRow = DGVFlight.SelectedRows[0];
                 int flightID = Convert.ToInt32(flightRow.Cells["FlightID"].Value);
@@ -237,7 +235,6 @@ namespace Presentation
         {
             DGVMainPilot.ClearSelection();
 
-            // Ẩn hoặc đổi tên các cột
             DGVMainPilot.Columns["PersonID"].HeaderText = "Mã phi công";
             DGVMainPilot.Columns["UserName"].Visible = false;
             DGVMainPilot.Columns["Password"].Visible = false;
@@ -247,7 +244,6 @@ namespace Presentation
             DGVMainPilot.Columns["FullName"].HeaderText = "Họ và tên";
             DGVMainPilot.Columns["CCCD"].HeaderText = "CCCD";
 
-            // Ẩn cột Status vì database đã lọc người có status = 1
             if (DGVMainPilot.Columns.Contains("Status"))
                 DGVMainPilot.Columns["Status"].Visible = false;
 
@@ -258,7 +254,6 @@ namespace Presentation
         {
             DGVCoPilot.ClearSelection();
 
-            // Ẩn hoặc đổi tên các cột
             DGVCoPilot.Columns["PersonID"].HeaderText = "Mã cơ phó";
             DGVCoPilot.Columns["UserName"].Visible = false;
             DGVCoPilot.Columns["Password"].Visible = false;
@@ -268,7 +263,6 @@ namespace Presentation
             DGVCoPilot.Columns["FullName"].HeaderText = "Họ và tên";
             DGVCoPilot.Columns["CCCD"].HeaderText = "CCCD";
 
-            // Ẩn cột Status vì database đã lọc người có status = 1
             if (DGVCoPilot.Columns.Contains("Status"))
                 DGVCoPilot.Columns["Status"].Visible = false;
 
@@ -279,7 +273,6 @@ namespace Presentation
         {
             DGVAttendant.ClearSelection();
 
-            // Ẩn hoặc đổi tên các cột
             DGVAttendant.Columns["PersonID"].HeaderText = "Mã tiếp viên";
             DGVAttendant.Columns["UserName"].Visible = false;
             DGVAttendant.Columns["Password"].Visible = false;
@@ -289,11 +282,179 @@ namespace Presentation
             DGVAttendant.Columns["FullName"].HeaderText = "Họ và tên";
             DGVAttendant.Columns["CCCD"].HeaderText = "CCCD";
 
-            // Ẩn cột Status vì database đã lọc người có status = 1
             if (DGVAttendant.Columns.Contains("Status"))
                 DGVAttendant.Columns["Status"].Visible = false;
 
             DGVAttendant.AutoResizeColumns();
+        }
+
+        private FlightInfo ReadFullFlightInfoFromDGV()
+        {
+            // Lấy thông tin chuyến bay
+            var flightRow = DGVFlight.SelectedRows[0];
+            int flightID = Convert.ToInt32(flightRow.Cells["FlightID"].Value);
+            string flightNumber = flightRow.Cells["FlightNumber"].Value.ToString();
+            string airline = flightRow.Cells["Airline"].Value.ToString();
+            string departCode = flightRow.Cells["DepartCode"].Value.ToString();
+            string arriveCode = flightRow.Cells["ArriveCode"].Value.ToString();
+            DateTime departureDate = Convert.ToDateTime(flightRow.Cells["DepartureDate"].Value);
+            DateTime arrivalDate = Convert.ToDateTime(flightRow.Cells["ArrivalDate"].Value);
+            int passengerCount = Convert.ToInt32(flightRow.Cells["PassengerCount"].Value);
+
+            // Lấy phi công chính
+            var pilotRow = DGVMainPilot.SelectedRows[0];
+            int? pilotID = Convert.ToInt32(pilotRow.Cells["PersonID"].Value);
+            string pilotName = pilotRow.Cells["FullName"].Value.ToString();
+
+            // Lấy cơ phó
+            var coPilotRow = DGVCoPilot.SelectedRows[0];
+            int? coPilotID = Convert.ToInt32(coPilotRow.Cells["PersonID"].Value);
+            string coPilotName = coPilotRow.Cells["FullName"].Value.ToString();
+
+            // Lấy tiếp viên
+            var attendantRow = DGVAttendant.SelectedRows[0];
+            int? attendantID = Convert.ToInt32(attendantRow.Cells["PersonID"].Value);
+            string attendantName = attendantRow.Cells["FullName"].Value.ToString();
+
+            // Lấy trạng thái ghế
+            bool[] seats = new bool[10];
+            for (int i = 0; i < 10; i++)
+            {
+                seats[i] = Convert.ToBoolean(flightRow.Cells[$"G{i + 1}"].Value);
+            }
+
+            return new FlightInfo(
+                flightID, flightNumber, airline, departCode, arriveCode,
+                departureDate, arrivalDate,
+                pilotID, pilotName, coPilotID, coPilotName,
+                attendantID, attendantName,
+                passengerCount, seats
+            );
+        }
+
+        private void btnRemoveCrew_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DGVFlight.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn chuyến bay cần gỡ phi hành đoàn!",
+                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Lấy thông tin chuyến bay đã chọn
+                var flightRow = DGVFlight.SelectedRows[0];
+                int flightID = Convert.ToInt32(flightRow.Cells["FlightID"].Value);
+                string flightNumber = flightRow.Cells["FlightNumber"].Value.ToString();
+                DateTime departureDate = Convert.ToDateTime(flightRow.Cells["DepartureDate"].Value);
+
+                // Kiểm tra xem chuyến bay đã có phi hành đoàn chưa
+                int? pilotID = flightRow.Cells["PilotID"].Value != DBNull.Value ? Convert.ToInt32(flightRow.Cells["PilotID"].Value) : (int?)null;
+                int? coPilotID = flightRow.Cells["CoPilotID"].Value != DBNull.Value ? Convert.ToInt32(flightRow.Cells["CoPilotID"].Value) : (int?)null;
+                int? attendantID = flightRow.Cells["AttendantID"].Value != DBNull.Value ? Convert.ToInt32(flightRow.Cells["AttendantID"].Value) : (int?)null;
+
+                if (pilotID == null && coPilotID == null && attendantID == null)
+                {
+                    MessageBox.Show("Chuyến bay này chưa được gán phi hành đoàn!",
+                                   "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Xác nhận gỡ phi hành đoàn
+                var result = MessageBox.Show(
+                    $"Bạn có chắc chắn muốn gỡ phi hành đoàn cho chuyến bay {flightNumber} ngày {departureDate:dd/MM/yyyy}?",
+                    "Xác nhận gỡ phi hành đoàn",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    FlightInfo flight = CreateEmptyCrewFlight(flightRow);
+
+                    AddCrewMember crewManager = new AddCrewMember();
+                    bool success = crewManager.AssignCrewToFlight(flight);
+
+                    if (success)
+                    {
+                        // Cập nhật trạng thái phi hành đoàn cũ thành rảnh (status = 1)
+                        if (pilotID.HasValue)
+                        {
+                            crewManager.UpdatePilotStatus(pilotID.Value);
+                        }
+                        if (coPilotID.HasValue)
+                        {
+                            crewManager.UpdateCoPilotStatus(coPilotID.Value);
+                        }
+                        if (attendantID.HasValue)
+                        {
+                            crewManager.UpdateAttendantStatus(attendantID.Value);
+                        }
+
+                        MessageBox.Show("Đã gỡ phi hành đoàn khỏi chuyến bay thành công!",
+                                       "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi xảy ra khi gỡ phi hành đoàn!",
+                                       "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string message = "Lỗi gỡ phi hành đoàn: " + ex.Message;
+                if (ex.InnerException != null)
+                    message += "\nChi tiết: " + ex.InnerException.Message;
+
+                MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Làm mới dữ liệu
+                LoadToFlightGridView();
+                LoadToPilotGridView();
+                LoadToCoPilotGridView();
+                LoadToAttendantGridView();
+                DGVFlight.ClearSelection();
+                DGVMainPilot.ClearSelection();
+                DGVCoPilot.ClearSelection();
+                DGVAttendant.ClearSelection();
+            }
+        }
+
+        private FlightInfo CreateEmptyCrewFlight(DataGridViewRow flightRow)
+        {
+            // Lấy thông tin chuyến bay
+            int flightID = Convert.ToInt32(flightRow.Cells["FlightID"].Value);
+            string flightNumber = flightRow.Cells["FlightNumber"].Value.ToString();
+            string airline = flightRow.Cells["Airline"].Value.ToString();
+            string departCode = flightRow.Cells["DepartCode"].Value.ToString();
+            string arriveCode = flightRow.Cells["ArriveCode"].Value.ToString();
+            DateTime departureDate = Convert.ToDateTime(flightRow.Cells["DepartureDate"].Value);
+            DateTime arrivalDate = Convert.ToDateTime(flightRow.Cells["ArrivalDate"].Value);
+            int passengerCount = Convert.ToInt32(flightRow.Cells["PassengerCount"].Value);
+
+            int? pilotID = null;
+            string pilotName = null;
+            int? coPilotID = null;
+            string coPilotName = null;
+            int? attendantID = null;
+            string attendantName = null;
+
+            // Lấy trạng thái ghế
+            bool[] seats = new bool[10];
+            for (int i = 0; i < 10; i++)
+            {
+                seats[i] = Convert.ToBoolean(flightRow.Cells[$"G{i + 1}"].Value);
+            }
+
+            return new FlightInfo(
+                flightID, flightNumber, airline, departCode, arriveCode,
+                departureDate, arrivalDate,
+                pilotID, pilotName, coPilotID, coPilotName,
+                attendantID, attendantName,
+                passengerCount, seats
+            );
         }
     }
 }

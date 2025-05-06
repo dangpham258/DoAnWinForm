@@ -52,7 +52,6 @@ namespace DataAccess
             {
                 conn.Open();
 
-                // Bắt đầu giao dịch
                 SqlTransaction transaction = conn.BeginTransaction();
                 try
                 {
@@ -88,13 +87,11 @@ namespace DataAccess
                     updateNewSeatCmd.Parameters.AddWithValue("@ArrivalDate", arrivalDate);
                     updateNewSeatCmd.ExecuteNonQuery();
 
-                    // Hoàn tất giao dịch
                     transaction.Commit();
                     result = true;
                 }
                 catch (Exception ex)
                 {
-                    // Rollback giao dịch nếu có lỗi
                     transaction.Rollback();
                     throw ex;
                 }

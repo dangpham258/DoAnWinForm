@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Presentation
 {
@@ -51,9 +52,16 @@ namespace Presentation
             this.Hide();
         }
 
-        private void btnCheckFeedback_Click(object sender, EventArgs e)
+        private void btnFeedback_Click(object sender, EventArgs e)
         {
             CheckFeedbackForm next = new CheckFeedbackForm();
+            next.Show();
+            this.Hide();
+        }
+
+        private void btnStatistic_Click(object sender, EventArgs e)
+        {
+            StatisticForm next = new StatisticForm();
             next.Show();
             this.Hide();
         }

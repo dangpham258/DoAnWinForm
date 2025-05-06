@@ -11,7 +11,6 @@ namespace BusinessLogic
     public class CheckForLoadToDGV
     {
         GetDataForDGV load = new GetDataForDGV();
-        // Load vào form ControllerFlightChoose
         public DataTable ForChoosingFlight()
         {
             return load.GetFlightsPrioritizeWithoutCrew();
@@ -28,9 +27,9 @@ namespace BusinessLogic
         {
             return load.GetAvailableAttendant();
         }
-        public DataTable ForAllFeedback()
+        public DataTable ForCheckFeedback()
         {
-            return load.GetFeedback();
+            return load.GetFeedbackNotSeen();
         }
         public DataTable ForFeedbackWithFilter(string type, bool seen)
         {

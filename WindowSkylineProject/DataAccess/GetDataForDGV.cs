@@ -15,18 +15,27 @@ namespace DataAccess
         {
             try
             {
-                string sqlStr = @"SELECT * FROM Table_FlightInfoDatabase
-                        WHERE CAST(DepartureDate AS DATE) = CAST(GETDATE() AS DATE)
-                        ORDER BY CASE 
-                            WHEN PilotID IS NULL OR CoPilotID IS NULL OR AttendantID IS NULL THEN 0 
-                            ELSE 1 
-                        END,
-                        DepartureDate ASC";
+                string sqlStr = @"
+                SELECT *
+                FROM Table_FlightInfoDatabase
+                WHERE CAST(DepartureDate AS DATE) >= CAST(GETDATE() AS DATE)
+                ORDER BY 
+                    CASE 
+                        WHEN PilotID   IS NULL 
+                          OR CoPilotID IS NULL 
+                          OR AttendantID IS NULL 
+                        THEN 0 
+                        ELSE 1 
+                    END,
+                    DepartureDate ASC";
+
                 return db.ExecuteQuery(sqlStr);
             }
             catch (Exception ex)
             {
-                throw new DataAccessException("Lỗi khi lấy dữ liệu chuyến bay trong ngày (ưu tiên thiếu phi hành đoàn)", ex);
+                throw new DataAccessException(
+                    "Lỗi khi lấy dữ liệu chuyến bay từ hôm nay trở đi (ưu tiên thiếu phi hành đoàn)",
+                    ex);
             }
         }
 
@@ -35,8 +44,8 @@ namespace DataAccess
             try
             {
                 string sqlStr = "SELECT * FROM Table_CrewDatabase " +
-                    "WHERE JobType = 'Pilot' AND Status = 1 " +
-                    "ORDER BY YearsOfExperience DESC";
+                                "WHERE JobType = 'Pilot' AND Status = 1 " +
+                                "ORDER BY YearsOfExperience DESC";
                 return db.ExecuteQuery(sqlStr);
             }
             catch (Exception ex)
@@ -50,8 +59,8 @@ namespace DataAccess
             try
             {
                 string sqlStr = "SELECT * FROM Table_CrewDatabase " +
-                    "WHERE JobType = 'Co-Pilot' AND Status = 1 " +
-                    "ORDER BY YearsOfExperience DESC";
+                                "WHERE JobType = 'Co-Pilot' AND Status = 1 " +
+                                "ORDER BY YearsOfExperience DESC";
                 return db.ExecuteQuery(sqlStr);
             }
             catch (Exception ex)
@@ -65,8 +74,8 @@ namespace DataAccess
             try
             {
                 string sqlStr = "SELECT * FROM Table_CrewDatabase " +
-                    "WHERE JobType = 'Attendant' AND Status = 1 " +
-                    "ORDER BY YearsOfExperience DESC";
+                                "WHERE JobType = 'Attendant' AND Status = 1 " +
+                                "ORDER BY YearsOfExperience DESC";
                 return db.ExecuteQuery(sqlStr);
             }
             catch (Exception ex)
@@ -115,11 +124,11 @@ namespace DataAccess
             }
         }
 
-        public DataTable GetFeedback()
+        public DataTable GetFeedbackNotSeen()
         {
             try
             {
-                string sqlStr = "SELECT * FROM Table_FeedbackDatabase";
+                string sqlStr = "SELECT * FROM Table_FeedbackDatabase WHERE Status = 0";
                 return db.ExecuteQuery(sqlStr);
             }
             catch (Exception ex)

@@ -58,6 +58,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -188,6 +189,12 @@
       <DependentUpon>SkylineDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="StatisticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticForm.Designer.cs">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TicketCancelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +278,9 @@
     <EmbeddedResource Include="SeatChangeForm.resx">
       <DependentUpon>SeatChangeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StatisticForm.resx">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TicketCancelForm.resx">
       <DependentUpon>TicketCancelForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,16 +316,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
-      <Project>{cc61bd88-01f6-4530-8066-476d48a975fc}</Project>
-      <Name>BusinessLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataTransferObject\DataTransferObject.csproj">
-      <Project>{085eba62-b739-4d67-b506-5e72499c9b03}</Project>
-      <Name>DataTransferObject</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\back.png" />
   </ItemGroup>
   <ItemGroup>
@@ -344,6 +344,79 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SeatChange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{cc61bd88-01f6-4530-8066-476d48a975fc}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataTransferObject\DataTransferObject.csproj">
+      <Project>{085eba62-b739-4d67-b506-5e72499c9b03}</Project>
+      <Name>DataTransferObject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vietnameairline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vietjack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bamboo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconlogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flyicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quanLy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-feedback-icon-graphic-design-template-vector-illustration-png-image_1497727.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconFeedBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\khaosat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\khaosat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vemaybay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maybayIMG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memberDetailIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vemaybayicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconHuy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nguoiquanly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anhmaybay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9977134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baocao.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -43,13 +43,11 @@ namespace Presentation
                                  ? dateTimePicker.Value.ToString("yyyy-MM-dd")
                                  : null;
 
-            // Chỉ lấy ngày nếu người dùng đã chọn
             if (checkBoxDate.Checked)
             {
                 date = dateTimePicker.Value.ToString("yyyy-MM-dd");
             }
 
-            // Kiểm tra xem người dùng có chọn trùng điểm đi và điểm đến không
             if (!string.IsNullOrEmpty(diemDi) && !string.IsNullOrEmpty(diemDen) && diemDi == diemDen)
             {
                 MessageBox.Show("Điểm đi và điểm đến không được trùng nhau!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -91,34 +89,28 @@ namespace Presentation
             };
             dateTimePicker.Enabled = false;
 
-            // Tạo danh sách cho combo box với tùy chọn trống đầu tiên
             DataTable airportsTable = new DataTable();
             airportsTable.Columns.Add("Code", typeof(string));
             airportsTable.Columns.Add("City", typeof(string));
 
-            // Thêm lựa chọn trống đầu tiên
             airportsTable.Rows.Add("", "-- Chọn --");
 
-            // Thêm dữ liệu từ AirportData
             foreach (var airport in AirportData.Airports)
             {
                 airportsTable.Rows.Add(airport.Code, airport.City);
             }
 
-            // Thiết lập ComboBox Điểm đi
             cbbDiemdi.DataSource = airportsTable;
             cbbDiemdi.DisplayMember = "City";
             cbbDiemdi.ValueMember = "Code";
             cbbDiemdi.SelectedIndex = 0;
 
-            // Thiết lập ComboBox Điểm đến với một bản sao của dữ liệu
             DataTable airportsTable2 = airportsTable.Copy();
             cbbDiemden.DataSource = airportsTable2;
             cbbDiemden.DisplayMember = "City";
             cbbDiemden.ValueMember = "Code";
             cbbDiemden.SelectedIndex = 0;
 
-            // Thiết lập DateTimePicker
             dateTimePicker.Format = DateTimePickerFormat.Custom;
             dateTimePicker.CustomFormat = "dddd, dd/MM/yyyy";
         }
@@ -154,7 +146,7 @@ namespace Presentation
                 DGVHistoryTicket.Columns.Add(col);
             }
 
-            // Gán giá trị text cho từng dòng dựa trên cột Status (Int32)
+            // Gán giá trị text cho từng dòng dựa trên cột Status
             foreach (DataGridViewRow row in DGVHistoryTicket.Rows)
             {
                 if (row.Cells["Status"].Value != null)
@@ -184,9 +176,7 @@ namespace Presentation
                     row.Cells["StatusText"].Value = text;
                 }
             }
-            // Ẩn cột Status gốc
             DGVHistoryTicket.Columns["Status"].Visible = false;
-
             DGVHistoryTicket.AutoResizeColumns();
         }
 

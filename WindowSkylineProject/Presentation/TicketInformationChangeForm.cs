@@ -1,6 +1,4 @@
-﻿using BusinessLogic;
-using DataTransferObject;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogic;
+using DataTransferObject;
 
 namespace Presentation
 {
@@ -71,7 +71,6 @@ namespace Presentation
             DGVTicket.Columns["TicketID"].Visible = false;
             DGVTicket.Columns["ClassType"].Visible = false;
 
-
             DGVTicket.Columns["DepartureDate"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
             DGVTicket.Columns["ArrivalDate"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
             DGVTicket.Columns["Price"].DefaultCellStyle.Format = "N0";
@@ -79,7 +78,6 @@ namespace Presentation
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            // Lấy ticketID đã lưu trong Tag
             if (!(this.Tag is string ticketID))
             {
                 MessageBox.Show("Vui lòng chọn một vé trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -90,16 +88,26 @@ namespace Presentation
             string sdt = txtSdt.Text.Trim();
             string cccd = txtCccd.Text.Trim();
 
-            // Basic validation
             if (string.IsNullOrEmpty(hoten) || string.IsNullOrEmpty(sdt) || string.IsNullOrEmpty(cccd))
             {
-                MessageBox.Show("Không được để trống Họ tên / SĐT / CCCD.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Không được để trống Họ tên / SĐT / CCCD", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            if (sdt.Length != 10)
+            {
+                MessageBox.Show("Số điện thoại phải hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSdt.Focus();
+                return;
+            }
+            if (cccd.Length != 12)
+            {
+                MessageBox.Show("CCCD phải hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCccd.Focus();
+                return;
+            }
             if (hoten == origFullName && sdt == origPhone && cccd == origCCCD)
             {
-                MessageBox.Show("Bạn chưa thay đổi thông tin nào cả.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa thay đổi thông tin nào cả", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -110,12 +118,11 @@ namespace Presentation
                 if (ok)
                 {
                     MessageBox.Show("Cập nhật thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Reload lại lưới
                     TicketInformationChangeForm_Load(null, null);
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Cập nhật thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -130,7 +137,6 @@ namespace Presentation
             if (e.RowIndex < 0) return;
             var row = DGVTicket.Rows[e.RowIndex];
 
-            // Đổ dữ liệu lên TextBox
             txtHoten.Text = origFullName = row.Cells["FullName"].Value.ToString();
             txtSdt.Text = origPhone = row.Cells["PhoneNumber"].Value.ToString();
             txtCccd.Text = origCCCD = row.Cells["CCCD"].Value.ToString();
@@ -150,7 +156,6 @@ namespace Presentation
 
         private void txtCccd_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Chỉ cho nhập số
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -165,7 +170,6 @@ namespace Presentation
 
         private void txtSdt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Chỉ cho nhập số
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;

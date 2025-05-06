@@ -22,10 +22,27 @@ namespace DataAccess
             try
             {
                 string query = @"
-            UPDATE Table_TicketDatabase
-            SET Status = 1
-            WHERE Status = 0 
-            AND DepartureDate < GETDATE()";
+                UPDATE t
+                SET Status = 1
+                FROM Table_TicketDatabase t
+                JOIN Table_FlightInfoDatabase f ON 
+                    t.FlightNumber = f.FlightNumber AND 
+                    t.DepartureDate = f.DepartureDate AND 
+                    t.ArrivalDate = f.ArrivalDate
+                WHERE t.Status = 0 
+                AND t.DepartureDate < GETDATE()
+                AND f.PilotID IS NOT NULL;
+            
+                UPDATE t
+                SET Status = 2
+                FROM Table_TicketDatabase t
+                JOIN Table_FlightInfoDatabase f ON 
+                    t.FlightNumber = f.FlightNumber AND 
+                    t.DepartureDate = f.DepartureDate AND 
+                    t.ArrivalDate = f.ArrivalDate
+                WHERE t.Status = 0 
+                AND t.DepartureDate < GETDATE()
+                AND f.PilotID IS NULL;";
 
                 int rowsAffected = ExecuteNonQuery(query);
                 return rowsAffected > 0;
@@ -81,32 +98,27 @@ namespace DataAccess
         {
             try
             {
-                // Trước tiên, kiểm tra xem chuyến bay đã tồn tại chưa để cập nhật PassengerCount và đánh dấu ghế
+                // Kiểm tra xem chuyến bay đã tồn tại chưa để cập nhật PassengerCount và đánh dấu ghế
                 string checkQuery = $@"
-            SELECT * FROM Table_FlightInfoDatabase 
-            WHERE FlightNumber = '{flightInfo.FlightNumber}' AND 
-                  DepartureDate = '{flightInfo.DepartureDate.ToString("yyyy-MM-dd HH:mm:ss")}' AND 
-                  ArrivalDate = '{flightInfo.ArrivalDate.ToString("yyyy-MM-dd HH:mm:ss")}'";
+                SELECT * FROM Table_FlightInfoDatabase 
+                WHERE FlightNumber = '{flightInfo.FlightNumber}' AND 
+                      DepartureDate = '{flightInfo.DepartureDate.ToString("yyyy-MM-dd HH:mm:ss")}' AND 
+                      ArrivalDate = '{flightInfo.ArrivalDate.ToString("yyyy-MM-dd HH:mm:ss")}'";
 
-                // Lấy thông tin chuyến bay nếu đã tồn tại
                 var flightData = ExecuteQuery(checkQuery);
-
                 if (flightData != null && flightData.Rows.Count > 0)
                 {
                     // Chuyến bay đã tồn tại, cập nhật PassengerCount và đánh dấu ghế
                     DataRow existingFlight = flightData.Rows[0];
                     int currentPassengerCount = Convert.ToInt32(existingFlight["PassengerCount"]);
 
-                    // Tạo câu lệnh UPDATE với các trường cần cập nhật
                     string updateQuery = $@"
-                UPDATE Table_FlightInfoDatabase SET 
-                PassengerCount = {currentPassengerCount + 1}";
+                    UPDATE Table_FlightInfoDatabase SET 
+                    PassengerCount = {currentPassengerCount + 1}";
 
                     // Nếu có số ghế được đặt, cập nhật trạng thái ghế
                     if (!string.IsNullOrEmpty(seatNumber))
                     {
-                        // Số ghế có định dạng "G1", "G2", ...
-                        // Trích xuất số từ seatNumber (bỏ ký tự G đầu tiên)
                         if (seatNumber.StartsWith("G") && seatNumber.Length > 1)
                         {
                             int seatIndex;
@@ -116,7 +128,6 @@ namespace DataAccess
                             }
                         }
                     }
-
                     updateQuery += $@" WHERE FlightNumber = '{flightInfo.FlightNumber}' 
                               AND DepartureDate = '{flightInfo.DepartureDate.ToString("yyyy-MM-dd HH:mm:ss")}' 
                               AND ArrivalDate = '{flightInfo.ArrivalDate.ToString("yyyy-MM-dd HH:mm:ss")}'";
@@ -156,11 +167,11 @@ namespace DataAccess
                     }
 
                     string insertQuery = $@"
-                INSERT INTO Table_FlightInfoDatabase (
-                    FlightNumber, Airline, DepartCode, ArriveCode, DepartureDate, ArrivalDate,
-                    PilotID, PilotName, CoPilotID, CoPilotName, AttendantID, AttendantName, PassengerCount,
-                    G1, G2, G3, G4, G5, G6, G7, G8, G9, G10
-                ) VALUES (
+                    INSERT INTO Table_FlightInfoDatabase (
+                        FlightNumber, Airline, DepartCode, ArriveCode, DepartureDate, ArrivalDate,
+                        PilotID, PilotName, CoPilotID, CoPilotName, AttendantID, AttendantName, PassengerCount,
+                        G1, G2, G3, G4, G5, G6, G7, G8, G9, G10
+                    ) VALUES (
                     '{flightInfo.FlightNumber}', 
                     '{flightInfo.Airline}', 
                     '{flightInfo.DepartCode}', 
@@ -175,7 +186,7 @@ namespace DataAccess
                     {(string.IsNullOrEmpty(flightInfo.AttendantName) ? "NULL" : $"'{flightInfo.AttendantName}'")}, 
                     1, 
                     {g1}, {g2}, {g3}, {g4}, {g5}, {g6}, {g7}, {g8}, {g9}, {g10}
-                )";
+                    )";
 
                     int rowsAffected = ExecuteNonQuery(insertQuery);
                     return rowsAffected > 0;
@@ -192,16 +203,16 @@ namespace DataAccess
             try
             {
                 string query = @"
-            SELECT TicketID, FlightNumber, Airline, DepartCode, ArriveCode, 
-                   DepartureDate, ArrivalDate, ClassType, SeatNumber, Price, 
-                   PhoneNumber, FullName, CCCD, Status
-            FROM Table_TicketDatabase 
-            WHERE UserName = @UserName AND Status = 0";
+                SELECT TicketID, FlightNumber, Airline, DepartCode, ArriveCode, 
+                       DepartureDate, ArrivalDate, ClassType, SeatNumber, Price, 
+                       PhoneNumber, FullName, CCCD, Status
+                FROM Table_TicketDatabase 
+                WHERE UserName = @UserName AND Status = 0";
 
                 List<SqlParameter> parameters = new List<SqlParameter>
-        {
-            new SqlParameter("@UserName", username)
-        };
+                {
+                    new SqlParameter("@UserName", username)
+                };
 
                 DataTable result = ExecuteQuery(query, parameters);
                 return result;
@@ -222,9 +233,9 @@ namespace DataAccess
                 {
                     // 1/ Lấy thông tin vé
                     var cmdGet = new SqlCommand(@"
-                SELECT FlightNumber, DepartureDate, ArrivalDate, SeatNumber
-                FROM Table_TicketDatabase
-                WHERE TicketID = @TicketID", conn, transaction);
+                    SELECT FlightNumber, DepartureDate, ArrivalDate, SeatNumber
+                    FROM Table_TicketDatabase
+                    WHERE TicketID = @TicketID", conn, transaction);
                     cmdGet.Parameters.AddWithValue("@TicketID", ticketID);
                     using (var reader = cmdGet.ExecuteReader())
                     {
@@ -238,9 +249,9 @@ namespace DataAccess
 
                         // 2/ Cập nhật status vé
                         var cmdUpdTicket = new SqlCommand(@"
-                    UPDATE Table_TicketDatabase
-                    SET Status = 2
-                    WHERE TicketID = @TicketID", conn, transaction);
+                        UPDATE Table_TicketDatabase
+                        SET Status = 2
+                        WHERE TicketID = @TicketID", conn, transaction);
                         cmdUpdTicket.Parameters.AddWithValue("@TicketID", ticketID);
                         cmdUpdTicket.ExecuteNonQuery();
 
@@ -271,7 +282,7 @@ namespace DataAccess
                 catch
                 {
                     transaction.Rollback();
-                    throw;  // hoặc trả về false, tuỳ logic của bạn
+                    throw;
                 }
                 finally
                 {
@@ -286,7 +297,6 @@ namespace DataAccess
         {
             try
             {
-                // Xây dựng câu truy vấn động dựa trên các thông tin có sẵn
                 StringBuilder queryBuilder = new StringBuilder();
                 queryBuilder.Append(@"
                     SELECT TicketID, FlightNumber, Airline, DepartCode, ArriveCode,
@@ -300,42 +310,36 @@ namespace DataAccess
                     new SqlParameter("@UserName", userName)
                 };
 
-                // Thêm điều kiện nếu có tên
                 if (!string.IsNullOrEmpty(name))
                 {
                     queryBuilder.Append(" AND FullName LIKE @FullName");
                     parameters.Add(new SqlParameter("@FullName", "%" + name + "%"));
                 }
 
-                // Thêm điều kiện nếu có điểm đi
                 if (!string.IsNullOrEmpty(departCode))
                 {
                     queryBuilder.Append(" AND DepartCode = @DepartCode");
                     parameters.Add(new SqlParameter("@DepartCode", departCode));
                 }
 
-                // Thêm điều kiện nếu có điểm đến
                 if (!string.IsNullOrEmpty(arriveCode))
                 {
                     queryBuilder.Append(" AND ArriveCode = @ArriveCode");
                     parameters.Add(new SqlParameter("@ArriveCode", arriveCode));
                 }
 
-                // Thêm điều kiện nếu có hãng bay
                 if (!string.IsNullOrEmpty(airline))
                 {
                     queryBuilder.Append(" AND Airline LIKE @Airline");
                     parameters.Add(new SqlParameter("@Airline", "%" + airline + "%"));
                 }
 
-                // Thêm điều kiện nếu có ngày
                 if (!string.IsNullOrEmpty(date))
                 {
                     queryBuilder.Append(" AND CONVERT(date, DepartureDate) = @DepartureDate");
                     parameters.Add(new SqlParameter("@DepartureDate", date));
                 }
 
-                // Thêm sắp xếp theo ngày khởi hành mới nhất
                 queryBuilder.Append(" ORDER BY DepartureDate DESC");
 
                 return ExecuteQuery(queryBuilder.ToString(), parameters);
@@ -358,12 +362,12 @@ namespace DataAccess
             WHERE TicketID = @TicketID";
 
                 var parameters = new List<SqlParameter>
-        {
-            new SqlParameter("@FullName",    fullName),
-            new SqlParameter("@PhoneNumber", phoneNumber),
-            new SqlParameter("@CCCD",        cccd),
-            new SqlParameter("@TicketID",    ticketID)
-        };
+                {
+                    new SqlParameter("@FullName",    fullName),
+                    new SqlParameter("@PhoneNumber", phoneNumber),
+                    new SqlParameter("@CCCD",        cccd),
+                    new SqlParameter("@TicketID",    ticketID)
+                };
 
                 int rows = ExecuteNonQuery(updateSql, parameters);
                 return rows > 0;
