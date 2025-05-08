@@ -40,15 +40,11 @@ namespace Presentation
                     return;
                 }
 
-                // Xóa dữ liệu cũ
                 dataGridViewFlightOffers.DataSource = null;
-
-                // Lấy thông tin người dùng nhập
                 string departureId = cbbDiemdi.SelectedValue?.ToString();
                 string arrivalId = cbbDiemden.SelectedValue?.ToString();
                 string outboundDate = flightDatePicker.Value.ToString("yyyy-MM-dd");
 
-                // Kiểm tra không trùng điểm đi và điểm đến
                 if (departureId == arrivalId)
                 {
                     MessageBox.Show("Điểm đi và điểm đến không được trùng nhau.", "Thông báo",
@@ -56,7 +52,6 @@ namespace Presentation
                     return;
                 }
 
-                // Vô hiệu hóa nút tìm kiếm và hiển thị thông báo đang tìm kiếm
                 btnLoad.Enabled = false;
                 lblStatus.Text = "Đang tìm kiếm chuyến bay...";
                 lblStatus.Visible = true;
@@ -67,18 +62,18 @@ namespace Presentation
                 await Task.Run(async () => {
                     try
                     {
-                // Gọi API để lấy dữ liệu JSON
-                string jsonData = await serpClient.GetGoogleFlightsAsync(
-                    departureId,
-                    arrivalId,
-                    outboundDate,
-                    "VND",    // currency
-                    "en",     // hl
-                    "vn"      // gl
-                );
+                    // Gọi API để lấy dữ liệu JSON
+                    string jsonData = await serpClient.GetGoogleFlightsAsync(
+                        departureId,
+                        arrivalId,
+                        outboundDate,
+                        "VND",    // currency
+                        "en",     // hl
+                        "vn"      // gl
+                    );
 
                         // Chuyển JSON thành DataTable (thực hiện trên luồng phụ)
-                DataTable dt = serpClient.GetFlightOffersDataTable(jsonData);
+                        DataTable dt = serpClient.GetFlightOffersDataTable(jsonData);
                         DataView dv = new DataView(dt);
                         dv.RowFilter = $"DepartureAirport = '{departureId}' AND ArrivalAirport = '{arrivalId}' AND CabinClass = 'Economy'";
 
@@ -87,8 +82,8 @@ namespace Presentation
                             if (dv.Count > 0)
                             {
                                 dataGridViewFlightOffers.DataSource = dv;
-                FormatDataGridView();
-            }
+                                FormatDataGridView();
+                            }
                             else
                             {
                                 MessageBox.Show("Không tìm thấy chuyến bay phù hợp.", "Thông báo",
@@ -98,10 +93,9 @@ namespace Presentation
                     }
             catch (Exception ex)
             {
-                        // Xử lý lỗi trên luồng phụ
                         this.Invoke((MethodInvoker)delegate {
-                MessageBox.Show("Có lỗi xảy ra khi tìm chuyến bay: " + ex.Message, "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Có lỗi xảy ra khi tìm chuyến bay: " + ex.Message, "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                         });
                     }
                 });
@@ -121,7 +115,6 @@ namespace Presentation
 
         private void FormatDataGridView()
         {
-            // Cách hiển thị các cột trong GridView
             dataGridViewFlightOffers.Columns["FlightNumber"].HeaderText = "Số hiệu";
             dataGridViewFlightOffers.Columns["Airline"].HeaderText = "Hãng bay";
             dataGridViewFlightOffers.Columns["Price"].HeaderText = "Giá vé";
@@ -132,11 +125,9 @@ namespace Presentation
             dataGridViewFlightOffers.Columns["ArrivalTime"].HeaderText = "Giờ đến";
             dataGridViewFlightOffers.Columns["CabinClass"].HeaderText = "Hạng ghế";
 
-            // Định dạng giờ
             dataGridViewFlightOffers.Columns["DepartureTime"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
             dataGridViewFlightOffers.Columns["ArrivalTime"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
 
-            // Định dạng giá tiền
             dataGridViewFlightOffers.Columns["Price"].DefaultCellStyle.Format = "N0";
             dataGridViewFlightOffers.Columns["Price"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
@@ -159,7 +150,6 @@ namespace Presentation
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            // Kiểm tra xem có dòng nào được chọn không
             if (dataGridViewFlightOffers.SelectedRows.Count == 0 && dataGridViewFlightOffers.SelectedCells.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn một chuyến bay!", "Thông báo",
@@ -167,7 +157,6 @@ namespace Presentation
                 return;
             }
 
-            // Lấy dòng được chọn
             DataGridViewRow row;
             if (dataGridViewFlightOffers.SelectedRows.Count > 0)
             {
@@ -181,7 +170,6 @@ namespace Presentation
 
             try
             {
-                // Lưu thông tin chuyến bay vào biến tạm
                 BookingSession.CurrentTicket = new Ticket(
                     flightNumber: row.Cells["FlightNumber"].Value.ToString(),
                     airline: row.Cells["Airline"].Value.ToString(),
@@ -198,8 +186,6 @@ namespace Presentation
                     userName: PersonLoginSession.CurrentPerson.UserName // tên đăng nhập của người login
                 );
 
-
-                // Chuyển sang form tiếp theo
             BookingInformationForm next = new BookingInformationForm();
             next.Show();
             this.Hide();
@@ -215,10 +201,7 @@ namespace Presentation
         {
             if (e.RowIndex >= 0)
             {
-                // Lấy dòng được chọn
                 DataGridViewRow row = dataGridViewFlightOffers.Rows[e.RowIndex];
-
-                // Đánh dấu dòng được chọn
                 dataGridViewFlightOffers.ClearSelection();
                 row.Selected = true;
             }
@@ -248,8 +231,6 @@ namespace Presentation
         {
             int fromIndex = cbbDiemdi.SelectedIndex;
             int toIndex = cbbDiemden.SelectedIndex;
-
-            // Hoán đổi
             cbbDiemdi.SelectedIndex = toIndex;
             cbbDiemden.SelectedIndex = fromIndex;
         }

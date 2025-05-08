@@ -44,7 +44,6 @@ namespace DataAccess
 
                 if (personIds.Count > 0)
                 {
-                    // Tạo danh sách tham số động
                     var inParams = new List<string>();
                     var crewParams = new List<SqlParameter>();
                     for (int i = 0; i < personIds.Count; i++)
@@ -62,7 +61,6 @@ namespace DataAccess
                 }
                 else
                 {
-                    // Tạo bảng rỗng để tránh thiếu schema
                     ds.Tables.Add(new DataTable("CrewInfo"));
                 }
 

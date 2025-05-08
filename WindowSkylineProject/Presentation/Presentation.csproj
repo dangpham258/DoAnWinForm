@@ -51,8 +51,14 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +68,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookingConfirmForm.cs">
@@ -137,6 +144,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="QRDisplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QRDisplayForm.Designer.cs">
+      <DependentUpon>QRDisplayForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +189,12 @@
       <DependentUpon>SkylineDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="StatisticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticForm.Designer.cs">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TicketCancelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +206,12 @@
     </Compile>
     <Compile Include="TicketHistoryForm.Designer.cs">
       <DependentUpon>TicketHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketInformationChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketInformationChangeForm.Designer.cs">
+      <DependentUpon>TicketInformationChangeForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BookingConfirmForm.resx">
       <DependentUpon>BookingConfirmForm.cs</DependentUpon>
@@ -235,6 +260,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QRDisplayForm.resx">
+      <DependentUpon>QRDisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,11 +278,17 @@
     <EmbeddedResource Include="SeatChangeForm.resx">
       <DependentUpon>SeatChangeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StatisticForm.resx">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TicketCancelForm.resx">
       <DependentUpon>TicketCancelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TicketHistoryForm.resx">
       <DependentUpon>TicketHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketInformationChangeForm.resx">
+      <DependentUpon>TicketInformationChangeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -280,16 +314,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
-      <Project>{cc61bd88-01f6-4530-8066-476d48a975fc}</Project>
-      <Name>BusinessLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataTransferObject\DataTransferObject.csproj">
-      <Project>{085eba62-b739-4d67-b506-5e72499c9b03}</Project>
-      <Name>DataTransferObject</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\back.png" />
@@ -320,6 +344,79 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SeatChange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{cc61bd88-01f6-4530-8066-476d48a975fc}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataTransferObject\DataTransferObject.csproj">
+      <Project>{085eba62-b739-4d67-b506-5e72499c9b03}</Project>
+      <Name>DataTransferObject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vietnameairline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vietjack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bamboo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconlogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flyicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quanLy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-feedback-icon-graphic-design-template-vector-illustration-png-image_1497727.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconFeedBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\khaosat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\khaosat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vemaybay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maybayIMG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memberDetailIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vemaybayicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconHuy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nguoiquanly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anhmaybay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9977134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baocao.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -162,39 +162,5 @@ namespace DataTransferObject
             get { return passengerCount; }
             set { passengerCount = value; }
         }
-
-        // Phương thức để kiểm tra và thiết lập ghế
-        public bool IsSeatOccupied(int seatNumber)
-        {
-            if (seatNumber < 1 || seatNumber > 10)
-                throw new ArgumentOutOfRangeException("Số ghế phải từ 1 đến 10");
-
-            return seats[seatNumber - 1];
-        }
-
-        public void SetSeatStatus(int seatNumber, bool isOccupied)
-        {
-            if (seatNumber < 1 || seatNumber > 10)
-                throw new ArgumentOutOfRangeException("Số ghế phải từ 1 đến 10");
-
-            seats[seatNumber - 1] = isOccupied;
-
-            // Cập nhật số lượng khách nếu cần
-            UpdatePassengerCount();
-        }
-
-        // Phương thức hỗ trợ để đếm lại số lượng khách dựa trên ghế đã đặt
-        private void UpdatePassengerCount()
-        {
-            passengerCount = seats.Count(seat => seat);
-        }
-
-        // Lấy toàn bộ mảng ghế
-        public bool[] GetAllSeats()
-        {
-            bool[] result = new bool[10];
-            Array.Copy(seats, result, 10);
-            return result;
-        }
     }
 }

@@ -30,7 +30,6 @@ namespace Presentation
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            // Kiểm tra xem có ghế nào được chọn chưa
             string selectedSeat = GetSelectedSeat();
             if (string.IsNullOrEmpty(selectedSeat))
             {
@@ -39,16 +38,12 @@ namespace Presentation
                 return;
             }
 
-            // Lưu thông tin ghế đã chọn
             BookingSession.CurrentTicket.SeatNumber = selectedSeat;
-
-            // Chuyển sang form xác nhận
             BookingConfirmForm next = new BookingConfirmForm();
             next.Show();
             this.Hide();
         }
 
-        // Phương thức lấy ghế được chọn từ các RadioButton
         private string GetSelectedSeat()
         {
             // Kiểm tra từng RadioButton trong GroupBox
@@ -56,9 +51,8 @@ namespace Presentation
             {
                 if (control is RadioButton radioButton && radioButton.Checked)
                 {
-                    // Lấy số ghế từ tên của RadioButton (thường là "radioButton1", "radioButton2",...)
                     string buttonName = radioButton.Name;
-                    string seatNumber = "G" + buttonName.Substring(11).PadLeft(2, '0'); // Chuyển đổi "radioButton1" -> "G01"
+                    string seatNumber = "G" + buttonName.Substring(11); // Chuyển đổi "radioButton1" -> "G1"
                     return seatNumber;
                 }
             }
@@ -80,11 +74,11 @@ namespace Presentation
             {
                 if (control is RadioButton rb)
                 {
-                    string seatName = "G" + rb.Name.Substring(11).PadLeft(1, '0'); // "radioButton1" => G1
+                    string seatName = "G" + rb.Name.Substring(11); // "radioButton1" => G1
                     if (seatStatus.ContainsKey(seatName) && seatStatus[seatName])
                     {
                         rb.Enabled = false;
-                        rb.ForeColor = Color.Gray; // Tùy chọn: đổi màu cho dễ nhìn
+                        rb.ForeColor = Color.Gray;
                     }
                 }
             }

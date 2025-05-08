@@ -44,5 +44,68 @@ namespace DataAccess
             conn.Close();
             return seatStatus;
         }
+
+        public bool ChangeSeat(string ticketID, string newSeatNumber, string flightNumber, DateTime departureDate, DateTime arrivalDate)
+        {
+            bool result = false;
+            try
+            {
+                conn.Open();
+
+                SqlTransaction transaction = conn.BeginTransaction();
+                try
+                {
+                    // 1. Lấy ghế cũ từ vé hiện tại
+                    string getCurrentSeatQuery = "SELECT SeatNumber FROM Table_TicketDatabase WHERE TicketID = @TicketID";
+                    SqlCommand getCurrentSeatCmd = new SqlCommand(getCurrentSeatQuery, conn, transaction);
+                    getCurrentSeatCmd.Parameters.AddWithValue("@TicketID", ticketID);
+                    string oldSeatNumber = (string)getCurrentSeatCmd.ExecuteScalar();
+
+                    // 2. Cập nhật ghế mới trong bảng vé
+                    string updateTicketQuery = "UPDATE Table_TicketDatabase SET SeatNumber = @NewSeatNumber WHERE TicketID = @TicketID";
+                    SqlCommand updateTicketCmd = new SqlCommand(updateTicketQuery, conn, transaction);
+                    updateTicketCmd.Parameters.AddWithValue("@NewSeatNumber", newSeatNumber);
+                    updateTicketCmd.Parameters.AddWithValue("@TicketID", ticketID);
+                    updateTicketCmd.ExecuteNonQuery();
+
+                    // 3. Cập nhật trạng thái ghế trong bảng FlightInfoDatabase
+                    // Đánh dấu ghế cũ là trống (0)
+                    string updateOldSeatQuery = $"UPDATE Table_FlightInfoDatabase SET {oldSeatNumber} = 0 " +
+                                              "WHERE FlightNumber = @FlightNumber AND DepartureDate = @DepartureDate AND ArrivalDate = @ArrivalDate";
+                    SqlCommand updateOldSeatCmd = new SqlCommand(updateOldSeatQuery, conn, transaction);
+                    updateOldSeatCmd.Parameters.AddWithValue("@FlightNumber", flightNumber);
+                    updateOldSeatCmd.Parameters.AddWithValue("@DepartureDate", departureDate);
+                    updateOldSeatCmd.Parameters.AddWithValue("@ArrivalDate", arrivalDate);
+                    updateOldSeatCmd.ExecuteNonQuery();
+
+                    // Đánh dấu ghế mới là có người (1)
+                    string updateNewSeatQuery = $"UPDATE Table_FlightInfoDatabase SET {newSeatNumber} = 1 " +
+                                              "WHERE FlightNumber = @FlightNumber AND DepartureDate = @DepartureDate AND ArrivalDate = @ArrivalDate";
+                    SqlCommand updateNewSeatCmd = new SqlCommand(updateNewSeatQuery, conn, transaction);
+                    updateNewSeatCmd.Parameters.AddWithValue("@FlightNumber", flightNumber);
+                    updateNewSeatCmd.Parameters.AddWithValue("@DepartureDate", departureDate);
+                    updateNewSeatCmd.Parameters.AddWithValue("@ArrivalDate", arrivalDate);
+                    updateNewSeatCmd.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    result = true;
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    throw ex;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                    conn.Close();
+            }
+            return result;
+        }
     }
 }

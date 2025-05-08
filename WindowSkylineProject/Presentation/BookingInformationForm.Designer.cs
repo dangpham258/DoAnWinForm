@@ -36,11 +36,13 @@
             this.txtCccd = new System.Windows.Forms.TextBox();
             this.btnNext = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblDiemDi = new System.Windows.Forms.Label();
+            this.lblDiemDen = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.PictureBox();
-            this.lblDiemDi = new System.Windows.Forms.Label();
-            this.lblDiemDen = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
@@ -130,6 +132,39 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
+            // lblDiemDi
+            // 
+            this.lblDiemDi.AutoSize = true;
+            this.lblDiemDi.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiemDi.Location = new System.Drawing.Point(475, 590);
+            this.lblDiemDi.Name = "lblDiemDi";
+            this.lblDiemDi.Size = new System.Drawing.Size(31, 28);
+            this.lblDiemDi.TabIndex = 72;
+            this.lblDiemDi.Text = "Đi";
+            this.lblDiemDi.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblDiemDen
+            // 
+            this.lblDiemDen.AutoSize = true;
+            this.lblDiemDen.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiemDen.Location = new System.Drawing.Point(1016, 590);
+            this.lblDiemDen.Name = "lblDiemDen";
+            this.lblDiemDen.Size = new System.Drawing.Size(49, 28);
+            this.lblDiemDen.TabIndex = 73;
+            this.lblDiemDen.Text = "Đến";
+            this.lblDiemDen.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Presentation.Properties.Resources.iconlogin;
+            this.pictureBox3.Location = new System.Drawing.Point(975, 11);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(64, 42);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 74;
+            this.pictureBox3.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Presentation.Properties.Resources.MayBayBay;
@@ -164,33 +199,12 @@
             this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // lblDiemDi
-            // 
-            this.lblDiemDi.AutoSize = true;
-            this.lblDiemDi.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiemDi.Location = new System.Drawing.Point(475, 590);
-            this.lblDiemDi.Name = "lblDiemDi";
-            this.lblDiemDi.Size = new System.Drawing.Size(31, 28);
-            this.lblDiemDi.TabIndex = 72;
-            this.lblDiemDi.Text = "Đi";
-            this.lblDiemDi.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblDiemDen
-            // 
-            this.lblDiemDen.AutoSize = true;
-            this.lblDiemDen.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiemDen.Location = new System.Drawing.Point(1016, 590);
-            this.lblDiemDen.Name = "lblDiemDen";
-            this.lblDiemDen.Size = new System.Drawing.Size(49, 28);
-            this.lblDiemDen.TabIndex = 73;
-            this.lblDiemDen.Text = "Đến";
-            this.lblDiemDen.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // BookingInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1181, 753);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lblDiemDen);
             this.Controls.Add(this.lblDiemDi);
             this.Controls.Add(this.pictureBox2);
@@ -210,6 +224,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookingInformationForm";
             this.Load += new System.EventHandler(this.BookingInformationForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
@@ -232,5 +247,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblDiemDi;
         private System.Windows.Forms.Label lblDiemDen;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

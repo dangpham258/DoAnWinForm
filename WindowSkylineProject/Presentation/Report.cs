@@ -47,7 +47,7 @@ namespace Presentation
                 if (ex.InnerException != null)
                     msg += "\nChi tiết: " + ex.InnerException.Message;
                 MessageBox.Show(msg, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
             }
             finally
             {

@@ -48,7 +48,7 @@ namespace Presentation
                     flightId = id;
                 }
 
-                DateTime? date = flightDatePicker.Checked
+                DateTime? date = checkBoxDate.Checked
                     ? flightDatePicker.Value.Date
                     : (DateTime?)null;
 
@@ -87,6 +87,21 @@ namespace Presentation
             }
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            ControllerLoginForm back = new ControllerLoginForm();
+            back.Show();
+            this.Hide();
+        }
+
+        private void txtFlightID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void flightDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Kiểm tra xem người dùng có click vào ô hợp lệ trong hàng không
@@ -108,13 +123,46 @@ namespace Presentation
             }
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void checkBoxDate_CheckedChanged(object sender, EventArgs e)
         {
-            ControllerLoginForm back = new ControllerLoginForm();
-            back.Show();
-            this.Hide();
+            if (checkBoxDate.Checked)
+            {
+                flightDatePicker.Enabled = true;
+            }
+            else
+            {
+                flightDatePicker.Enabled = false;
+                flightDatePicker.Value = DateTime.Today;
+            }
         }
 
-        
+        private void ReportFlightChooseForm_Load(object sender, EventArgs e)
+        {
+            FormatDataGridView();
+        }
+
+        private void FormatDataGridView()
+        {
+            flightDGV.ClearSelection();
+            flightDGV.Columns["FlightID"].HeaderText = "Mã chuyến bay";
+            flightDGV.Columns["FlightNumber"].HeaderText = "Số hiệu";
+            flightDGV.Columns["Airline"].HeaderText = "Hãng bay";
+            flightDGV.Columns["DepartCode"].HeaderText = "Sân bay đi";
+            flightDGV.Columns["ArriveCode"].HeaderText = "Sân bay đến";
+            flightDGV.Columns["DepartureDate"].HeaderText = "Ngày khởi hành";
+            flightDGV.Columns["ArrivalDate"].HeaderText = "Ngày đến";
+            flightDGV.Columns["PilotName"].HeaderText = "Phi công";
+            flightDGV.Columns["CoPilotName"].HeaderText = "Cơ phó";
+            flightDGV.Columns["PassengerCount"].HeaderText = "Số hành khách";
+            flightDGV.Columns["AttendantName"].HeaderText = "Tiếp viên";
+
+            flightDGV.Columns["PilotID"].Visible = false;
+            flightDGV.Columns["CoPilotID"].Visible = false;
+            flightDGV.Columns["AttendantID"].Visible = false;
+
+            flightDGV.Columns["DepartureDate"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
+            flightDGV.Columns["ArrivalDate"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
+            flightDGV.AutoResizeColumns();
+        }
     }
 }

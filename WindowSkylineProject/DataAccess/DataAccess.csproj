@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckCrewMember.cs" />
     <Compile Include="CheckLogin_RegisterAccess.cs" />
     <Compile Include="CheckSeat_Access.cs" />
+    <Compile Include="CheckStatistic_Access.cs" />
     <Compile Include="CheckTicketInformation_Access.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="FeedbackAccess.cs" />

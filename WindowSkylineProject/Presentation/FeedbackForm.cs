@@ -15,7 +15,7 @@ namespace Presentation
 {
     public partial class FeedbackForm : Form
     {
-        private const string Placeholder = "Ngắn gọn, không quá 512 kí tự";
+        private const string Placeholder = "Ngắn gọn, không quá 255 kí tự";
         public FeedbackForm()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace Presentation
             cbbType.Items.AddRange(new[]
            {
                 "Lỗi đặt vé",
-                "Lỗi thanh toán",
+                "Lỗi hệ thống",
                 "Góp ý tính năng",
                 "Thắc mắc",
                 "Khác"
@@ -40,6 +40,13 @@ namespace Presentation
         {
             try
             {
+                if (txtPhoneNumber.Text.Length != 10)
+                {
+                    MessageBox.Show("Số điện thoại phải hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPhoneNumber.Focus();
+                    return;
+                }
+
                 FeedbackManage fbManage = new FeedbackManage();
                 Feedback fb = new Feedback(txtFullName.Text, txtPhoneNumber.Text, cbbType.Text, richTxtDetail.Text);
                 
@@ -82,6 +89,10 @@ namespace Presentation
                         MessageBox.Show(result, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         richTxtDetail.Focus();
                         break;
+                    case "Vui lòng nhập nội dung phản hồi":
+                        MessageBox.Show(result, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        richTxtDetail.Focus();
+                        break;
                 }
             }
             catch (Exception ex)
@@ -121,7 +132,7 @@ namespace Presentation
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // Ngăn không cho nhập ký tự không hợp lệ
+                e.Handled = true;
             }
         }
 
@@ -130,6 +141,34 @@ namespace Presentation
             PassengerLoginForm back = new PassengerLoginForm();
             back.Show();
             this.Hide();
+        }
+
+        private void txtPhoneNumber_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            // Giới hạn 10 số
+            if (char.IsDigit(e.KeyChar) && ((sender as TextBox).Text.Length >= 10))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtFullName_TextChanged(object sender, EventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+            int selectionStart = txt.SelectionStart;
+            string filtered = new string(txt.Text.Where(c => char.IsLetter(c) && c <= 'z' || c == ' ').ToArray());
+            txt.Text = filtered.ToUpper();
+            txt.SelectionStart = selectionStart;
+        }
+
+        private void FeedbackForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

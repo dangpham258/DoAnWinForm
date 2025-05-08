@@ -8,7 +8,6 @@ namespace DataTransferObject
 {
     public class Passenger : Person, ILogin
     {
-        // Các field bổ sung (có thể null)
         private string phoneNumber;   // Số điện thoại
         private string fullName;      // Họ và tên
         private string cccd;          // Căn cước công dân (CCCD)
@@ -35,7 +34,6 @@ namespace DataTransferObject
             this.cccd = cccd;
         }
 
-        // Property
         public string PhoneNumber
         {
             get { return phoneNumber; }      // Lấy số điện thoại
