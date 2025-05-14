@@ -163,9 +163,5 @@ namespace Presentation
                 radioBtnNotSeen.Checked = false;
             }
         }
-
-        private void CheckFeedbackForm_Load(object sender, EventArgs e)
-        {
-        }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxStatus = new System.Windows.Forms.GroupBox();
             this.radioBtnYes = new System.Windows.Forms.RadioButton();
             this.radioBtnNo = new System.Windows.Forms.RadioButton();
@@ -54,9 +54,9 @@
             this.groupBoxStatus.Controls.Add(this.radioBtnNo);
             this.groupBoxStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxStatus.Location = new System.Drawing.Point(1000, 196);
-            this.groupBoxStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxStatus.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxStatus.Name = "groupBoxStatus";
-            this.groupBoxStatus.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxStatus.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxStatus.Size = new System.Drawing.Size(172, 123);
             this.groupBoxStatus.TabIndex = 2;
             this.groupBoxStatus.TabStop = false;
@@ -65,7 +65,7 @@
             // 
             this.radioBtnYes.AutoSize = true;
             this.radioBtnYes.Location = new System.Drawing.Point(11, 76);
-            this.radioBtnYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioBtnYes.Margin = new System.Windows.Forms.Padding(2);
             this.radioBtnYes.Name = "radioBtnYes";
             this.radioBtnYes.Size = new System.Drawing.Size(96, 32);
             this.radioBtnYes.TabIndex = 1;
@@ -77,7 +77,7 @@
             // 
             this.radioBtnNo.AutoSize = true;
             this.radioBtnNo.Location = new System.Drawing.Point(11, 28);
-            this.radioBtnNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioBtnNo.Margin = new System.Windows.Forms.Padding(2);
             this.radioBtnNo.Name = "radioBtnNo";
             this.radioBtnNo.Size = new System.Drawing.Size(118, 32);
             this.radioBtnNo.TabIndex = 0;
@@ -89,7 +89,7 @@
             // 
             this.richTxtDetail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTxtDetail.Location = new System.Drawing.Point(11, 66);
-            this.richTxtDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTxtDetail.Margin = new System.Windows.Forms.Padding(2);
             this.richTxtDetail.Name = "richTxtDetail";
             this.richTxtDetail.Size = new System.Drawing.Size(657, 272);
             this.richTxtDetail.TabIndex = 71;
@@ -97,14 +97,15 @@
             // 
             // btnFilter
             // 
+            this.btnFilter.BackColor = System.Drawing.SystemColors.Control;
             this.btnFilter.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFilter.Location = new System.Drawing.Point(682, 323);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(2);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(489, 51);
             this.btnFilter.TabIndex = 73;
             this.btnFilter.Text = "Lọc";
-            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.UseVisualStyleBackColor = false;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // label5
@@ -156,14 +157,14 @@
             this.DGVFeedback.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVFeedback.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVFeedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVFeedback.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVFeedback.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVFeedback.Location = new System.Drawing.Point(11, 388);
             this.DGVFeedback.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DGVFeedback.Name = "DGVFeedback";
@@ -228,11 +229,10 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.groupBoxStatus);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CheckFeedbackForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckFeedbackForm";
-            this.Load += new System.EventHandler(this.CheckFeedbackForm_Load);
             this.groupBoxStatus.ResumeLayout(false);
             this.groupBoxStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVFeedback)).EndInit();
